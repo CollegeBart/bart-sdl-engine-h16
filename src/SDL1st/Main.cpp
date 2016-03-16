@@ -1,10 +1,11 @@
 #include <iostream>
 #include "SDL.h"
+#include "SDL_image.h"
 
 const int SCREEN_HEIGHT = 480;
 const int SCREEN_WIDTH = 640;
 
-const char* const RENAUD_PATH = "Images\\JeSuisRenaud.bmp";
+const char* const RENAUD_PATH = "Images\\JeSuisRenaud.png";
 
 bool Initialize(SDL_Window** const window, SDL_Surface** const screen);
 bool LoadMedia(SDL_Surface** const image, const char* path);
@@ -62,7 +63,7 @@ bool Initialize(SDL_Window** const window,  SDL_Surface** const screen)
 
 bool LoadMedia(SDL_Surface** const image, const char* path)
 {
-	*image = SDL_LoadBMP(path);
+	*image = IMG_Load(path);
 	if (nullptr == *image)
 	{
 		printf("Unable to load image %s! SDL Error: %s\n", path, SDL_GetError());
