@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="JeSuisRenaud.bmp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0390F6FE-FDF2-4750-B0DD-DC78BDF64F84}</ProjectGuid>
     <RootNamespace>SDL1st</RootNamespace>
