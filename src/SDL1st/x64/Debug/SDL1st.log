@@ -1,5 +1,0 @@
-﻿  Main.cpp
-d:\users\bisjoe\documents\visual studio 2015\projects\bart-sdl-engine-h16\src\sdl1st\main.cpp(26): warning C4474: 'printf' : too many arguments passed for format string
-  d:\users\bisjoe\documents\visual studio 2015\projects\bart-sdl-engine-h16\src\sdl1st\main.cpp(26): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-  SDL1st.vcxproj -> D:\Users\bisjoe\Documents\Visual Studio 2015\Projects\bart-sdl-engine-h16\src\x64\Debug\SDL1st.exe
-  SDL1st.vcxproj -> D:\Users\bisjoe\Documents\Visual Studio 2015\Projects\bart-sdl-engine-h16\src\x64\Debug\SDL1st.pdb (Partial PDB)
