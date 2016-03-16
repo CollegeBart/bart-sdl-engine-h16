@@ -4,11 +4,11 @@
 const int SCREEN_HEIGHT = 480;
 const int SCREEN_WIDTH = 640;
 
-const char* const RENAUD_PATH = "Images\JeSuisRenaud.bmp";
+const char* const RENAUD_PATH = "Images\\JeSuisRenaud.bmp";
 
 bool Initialize(SDL_Window** const window, SDL_Surface** const screen);
 bool LoadMedia(SDL_Surface** const image, const char* path);
-void Close();
+void Close(SDL_Window* window, SDL_Surface* image);
 
 int main(int argc, char* args[])
 {
@@ -19,17 +19,19 @@ int main(int argc, char* args[])
 
 	if (Initialize(&window, &screen))
 	{
-		LoadMedia(&image, RENAUD_PATH);
+		if (LoadMedia(&image, RENAUD_PATH))
+		{
+			SDL_FillRect(screen, nullptr, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
 
-		SDL_FillRect(screen, nullptr, SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
-		SDL_UpdateWindowSurface(window);
+			SDL_BlitScaled(image, nullptr, screen, nullptr);
+
+			SDL_UpdateWindowSurface(window);
+		}
 	}
 
 	SDL_Delay(2000);
-	
-	SDL_DestroyWindow(window);
 
-	SDL_Quit();
+	Close(window, image);
 
 	return 0;
 }
@@ -65,11 +67,12 @@ bool LoadMedia(SDL_Surface** const image, const char* path)
 	{
 		printf("Unable to load image %s! SDL Error: %s\n", path, SDL_GetError());
 	}
-
 	return *image != nullptr;
 }
 
-void Close()
+void Close(SDL_Window* window, SDL_Surface* image)
 {
-
+	SDL_FreeSurface(image);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
 }
