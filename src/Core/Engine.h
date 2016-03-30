@@ -1,6 +1,7 @@
 #pragma once
 class Engine
 {
+
 #pragma region SINGLETON
 public:
 	static Engine* GetInstance()
@@ -21,7 +22,6 @@ public:
 
 
 private:
-
 
 
 };
