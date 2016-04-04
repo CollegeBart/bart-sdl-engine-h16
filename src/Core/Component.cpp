@@ -13,5 +13,5 @@ Component::~Component()
 
 void Component::Update()
 {
-
+	std::cout << "Component::Update" << std::endl;
 }

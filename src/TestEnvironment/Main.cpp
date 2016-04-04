@@ -1,3 +1,8 @@
+
+// Conteneur STL -> Standard Template Library
+// Insertion rapide par l'avant ou par l'arriere.
+// Random access operator
+#include <vector>
 #include <iostream>
 
 #include "Cochon.h"
@@ -6,12 +11,9 @@
 
 #define NUM_ANIMAL 3
 
-// Conteneur STL -> Standard Template Library
-// Insertion rapide par l'avant ou par l'arriere.
-// Random access operator
-#include <vector>
+#include "Engine.h"
 
-void main()
+int main(int argc, char* args[])
 {
 	#pragma region Heritage
 	{
@@ -40,6 +42,7 @@ void main()
 	}
 	#pragma endregion
 
+	#pragma region Vector
 	{
 		// Toujours initialiser à une valeur suffisante son vector
 		std::vector<int> vI = std::vector<int>(100);
@@ -71,8 +74,22 @@ void main()
 		std::cout << vI.capacity();
 		vI[0];
 	}
+	#pragma endregion
+
+#pragma region Engine Tests
+
+	GEngine->Init("TestEnvironment", 800, 600);
+
+	// Creation de nos objets de jeu.
+	Component* component = new Component();
+
+	GEngine->Run();
+
+	delete component;
+
+#pragma endregion
 
 	system("pause");
 
-	return;
+	return 0;
 }

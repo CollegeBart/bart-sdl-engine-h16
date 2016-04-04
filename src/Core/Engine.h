@@ -1,7 +1,6 @@
 #pragma once
 
-#include <vector>
-#include "Component.h"
+#include "Common.h"
 
 class Engine
 {
@@ -25,15 +24,22 @@ private:
 public:
 
 	bool Init();
+	bool Init(const char* title, int width, int height);
+	void Run();
+	
+private:
+
 	void Start();
 	void Update();
 	void Draw();
 	void Stop();
 
+	bool isInitialized;
+	bool isRunning;
 
-private:
-
-	
+	SDL_Window* window = nullptr;
+	SDL_Surface* screen = nullptr;
+	SDL_Surface* image = nullptr;
 
 };
 
