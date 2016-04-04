@@ -1,4 +1,8 @@
 #pragma once
+
+#include <vector>
+#include "Component.h"
+
 class Engine
 {
 
@@ -20,9 +24,16 @@ private:
 
 public:
 
+	bool Init();
+	void Start();
+	void Update();
+	void Draw();
+	void Stop();
+
 
 private:
 
+	
 
 };
 
