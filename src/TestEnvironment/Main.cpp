@@ -12,6 +12,7 @@
 #define NUM_ANIMAL 3
 
 #include "Engine.h"
+#include "Renaud.h"
 
 int main(int argc, char* args[])
 {
@@ -44,35 +45,35 @@ int main(int argc, char* args[])
 
 	#pragma region Vector
 	{
-		// Toujours initialiser à une valeur suffisante son vector
-		std::vector<int> vI = std::vector<int>(100);
-		vI.push_back(2);
-		vI.push_back(3);
-		vI.push_back(2);
-
-		// Copie de vector
-		std::vector<int> vI2 = std::vector<int>(vI);
-
-		for (int i = 0; i < vI.size(); i++)
-		{
-			
-		}
-
-		std::vector<int>::iterator iter;
-		for (iter = vI.begin(); iter != vI.end(); iter++)
-		{
-			std::cout << *iter << std::endl;
-		}
-
-		// Auto
-		auto it = vI.begin();
-		for (; iter != vI.end(); iter++)
-		{
-
-		}
-
-		std::cout << vI.capacity();
-		vI[0];
+		//// Toujours initialiser à une valeur suffisante son vector
+		//std::vector<int> vI = std::vector<int>(100);
+		//vI.push_back(2);
+		//vI.push_back(3);
+		//vI.push_back(2);
+		//
+		//// Copie de vector
+		//std::vector<int> vI2 = std::vector<int>(vI);
+		//
+		//for (int i = 0; i < vI.size(); i++)
+		//{
+		//	
+		//}
+		//
+		//std::vector<int>::iterator iter;
+		//for (iter = vI.begin(); iter != vI.end(); iter++)
+		//{
+		//	std::cout << *iter << std::endl;
+		//}
+		//
+		//// Auto
+		//auto it = vI.begin();
+		//for (; iter != vI.end(); iter++)
+		//{
+		//
+		//}
+		//
+		//std::cout << vI.capacity();
+		//vI[0];
 	}
 	#pragma endregion
 
@@ -81,11 +82,13 @@ int main(int argc, char* args[])
 	GEngine->Init("TestEnvironment", 800, 600);
 
 	// Creation de nos objets de jeu.
-	Component* component = new Component();
-
+	//Sprite* renaud = new Sprite("Images\\JeSuisRenaud.png");
+	Renaud* renaud = new Renaud();
+	
 	GEngine->Run();
 
-	delete component;
+	delete renaud;
+	//delete component;
 
 #pragma endregion
 

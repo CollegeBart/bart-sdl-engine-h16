@@ -33,6 +33,9 @@
     <ClCompile Include="Vache.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Renaud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renaud.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

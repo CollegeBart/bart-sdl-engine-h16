@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Common.h"
+#include "Resources.h"
 
 class Engine
 {
@@ -22,13 +23,14 @@ private:
 #pragma endregion
 
 public:
-
 	bool Init();
 	bool Init(const char* title, int width, int height);
 	void Run();
+
+	SDL_Renderer* GetRenderer() { return renderer; }
+	Resources* GetResources() { return resources; }
 	
 private:
-
 	void Start();
 	void Update();
 	void Draw();
@@ -37,9 +39,10 @@ private:
 	bool isInitialized;
 	bool isRunning;
 
+	SDL_Event* event;
 	SDL_Window* window = nullptr;
-	SDL_Surface* screen = nullptr;
-	SDL_Surface* image = nullptr;
+	SDL_Renderer* renderer;
 
+	Resources* resources;
 };
 

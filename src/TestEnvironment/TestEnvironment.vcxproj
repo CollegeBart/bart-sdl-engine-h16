@@ -70,7 +70,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>..\Core;..\..\libs\SDL2\include;..\..\libs\SDL2_image\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\libs\SDL2\lib\x64;..\..\libs\SDL2_image\lib\x64;..\x64\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\libs\SDL2\lib\x64;..\..\libs\SDL2_image\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -86,7 +86,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -122,6 +122,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mammifere.cpp" />
     <ClCompile Include="Poule.cpp" />
+    <ClCompile Include="Renaud.cpp" />
     <ClCompile Include="Vache.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +130,13 @@
     <ClInclude Include="Cochon.h" />
     <ClInclude Include="Mammifere.h" />
     <ClInclude Include="Poule.h" />
+    <ClInclude Include="Renaud.h" />
     <ClInclude Include="Vache.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.vcxproj">
+      <Project>{0b28263f-e2b2-4ddb-9ac4-0eed81bfe44d}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

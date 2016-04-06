@@ -11,7 +11,18 @@ Component::~Component()
 {
 }
 
+void Component::Start()
+{
+}
+
 void Component::Update()
 {
-	std::cout << "Component::Update" << std::endl;
+}
+
+void Component::Draw()
+{
+}
+
+void Component::Stop()
+{
 }

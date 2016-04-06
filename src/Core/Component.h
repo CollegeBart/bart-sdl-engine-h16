@@ -5,16 +5,18 @@
 class Component
 {
 public:
-
 	friend class Engine;
 
 	Component();
 	~Component();
 
-	virtual void Update();
+protected:
+	virtual void Start();
+	virtual void Update() = 0;
+	virtual void Draw();
+	virtual void Stop();
 
 private:
-
 	static std::vector<Component*> components;
 };
 
