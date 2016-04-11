@@ -7,6 +7,7 @@ Engine::Engine()
 	: isInitialized(false)
 	, isRunning(false)
 	, event(0)
+	, input(nullptr)
 	, resources(nullptr)
 {
 	event = new SDL_Event();
@@ -19,6 +20,7 @@ Engine::~Engine()
 
 	delete event;
 	delete resources;
+	delete input;
 
 	SDL_Quit();
 }
@@ -61,6 +63,7 @@ bool Engine::Init(const char* title, int width, int height)
 				}
 				else
 				{
+					input = new Input();
 					resources = new Resources(renderer);
 					isInitialized = true;
 				}
@@ -74,23 +77,27 @@ void Engine::Run()
 {
 	Start();
 
-	while (isRunning)
+	while (isRunning || GInput->IsKeyReleased(SDL_SCANCODE_ESCAPE)))
 	{
 		while (SDL_PollEvent(event) != 0)
 		{
+			// Update the input system
+			input->Poll(*event);
+		
+			// Process current event
 			switch (event->type)
 			{
 			case SDL_QUIT:
 				isRunning = false;
 				break;
-
-			case SDL_KEYDOWN:
-				if (event->key.keysym.scancode == SDL_SCANCODE_ESCAPE)
-					isRunning = false;
-				break;
-
 			default:
 				break;
+			}
+
+			// Quit if escape key is pressed
+			if (GInput->IsKeyReleased(SDL_SCANCODE_ESCAPE))
+			{
+				isRunning = false;
 			}
 		}
 		Update();

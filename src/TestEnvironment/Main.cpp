@@ -13,6 +13,7 @@
 
 #include "Engine.h"
 #include "Renaud.h"
+#include "TestEnvironment.h"
 
 int main(int argc, char* args[])
 {
@@ -77,22 +78,20 @@ int main(int argc, char* args[])
 	}
 	#pragma endregion
 
-#pragma region Engine Tests
+	#pragma region Engine Tests
 
 	GEngine->Init("TestEnvironment", 800, 600);
 
 	// Creation de nos objets de jeu.
 	//Sprite* renaud = new Sprite("Images\\JeSuisRenaud.png");
 	Renaud* renaud = new Renaud();
+	TestEnvironment* env = new TestEnvironment();
 	
 	GEngine->Run();
 
 	delete renaud;
-	//delete component;
 
-#pragma endregion
-
-	system("pause");
+	#pragma endregion
 
 	return 0;
 }

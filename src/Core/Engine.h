@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Common.h"
-#include "Resources.h"
 
 class Engine
 {
@@ -27,6 +26,7 @@ public:
 	bool Init(const char* title, int width, int height);
 	void Run();
 
+	Input* GetInput() { return input; }
 	SDL_Renderer* GetRenderer() { return renderer; }
 	Resources* GetResources() { return resources; }
 	
@@ -43,6 +43,7 @@ private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer;
 
+	Input* input;
 	Resources* resources;
 };
 

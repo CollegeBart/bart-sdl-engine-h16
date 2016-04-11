@@ -123,6 +123,7 @@
     <ClCompile Include="Mammifere.cpp" />
     <ClCompile Include="Poule.cpp" />
     <ClCompile Include="Renaud.cpp" />
+    <ClCompile Include="TestEnvironment.cpp" />
     <ClCompile Include="Vache.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,7 @@
     <ClInclude Include="Mammifere.h" />
     <ClInclude Include="Poule.h" />
     <ClInclude Include="Renaud.h" />
+    <ClInclude Include="TestEnvironment.h" />
     <ClInclude Include="Vache.h" />
   </ItemGroup>
   <ItemGroup>
