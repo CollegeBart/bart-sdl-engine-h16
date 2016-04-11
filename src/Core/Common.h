@@ -3,6 +3,7 @@
 #define GEngine		Engine::GetInstance()
 #define GResources	GEngine->GetResources()
 #define GRenderer	GEngine->GetRenderer()
+#define GInput		GEngine->GetInput()
 
 #define TITLE_DEFAULT "BartEngine::"
 #define SCREEN_WIDTH_DEFAULT 1280
@@ -19,4 +20,7 @@
 #include "SDL_image.h"
 
 // Custom includes
+#include "Vector2.h"
+#include "Input.h"
+#include "Resources.h"
 #include "Component.h"
