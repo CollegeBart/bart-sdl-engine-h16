@@ -77,7 +77,7 @@ void Engine::Run()
 {
 	Start();
 
-	while (isRunning || GInput->IsKeyReleased(SDL_SCANCODE_ESCAPE)))
+	while (isRunning)
 	{
 		while (SDL_PollEvent(event) != 0)
 		{
