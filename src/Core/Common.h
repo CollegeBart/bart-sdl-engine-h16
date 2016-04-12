@@ -4,6 +4,8 @@
 #define GResources	GEngine->GetResources()
 #define GRenderer	GEngine->GetRenderer()
 #define GInput		GEngine->GetInput()
+#define GTimer		GEngine->GetTimer()
+
 
 #define TITLE_DEFAULT "BartEngine::"
 #define SCREEN_WIDTH_DEFAULT 1280

@@ -32,16 +32,12 @@ void SpriteAnimation::Update()
 		srcRect->x = 0;
 		currFrame = 0;
 	}
-	if (GEngine->GetTimer()->GetCurrTime() > (prevFrameTime + (1000/numFrames)))
+	if (GTimer->GetCurrTime() > (prevFrameTime + (1000/numFrames)))
 	{
-		std::cout <<"srcRectx = " << srcRect->x << std::endl;
 		srcRect->x += srcRect->w;
 		currFrame++;
-		prevFrameTime = GEngine->GetTimer()->GetCurrTime();
+		prevFrameTime = GTimer->GetCurrTime();
 	}
-	std::cout <<"currtime = " << GEngine->GetTimer()->GetCurrTime() << std::endl;
-	std::cout << "prevframe time = " << prevFrameTime << std::endl;
-	std::cout << "curreFrama  = " << currFrame << std::endl;
 }
 
 void SpriteAnimation::Draw()
