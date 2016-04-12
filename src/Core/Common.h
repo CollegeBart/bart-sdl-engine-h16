@@ -18,9 +18,11 @@
 // SDL Libs
 #include "SDL.h"
 #include "SDL_image.h"
+//#include "SDL/SDL_ttf.h"
 
 // Custom includes
 #include "Vector2.h"
 #include "Input.h"
 #include "Resources.h"
 #include "Component.h"
+#include "Timer.h"

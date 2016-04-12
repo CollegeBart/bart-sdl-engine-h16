@@ -17,16 +17,17 @@ public:
 	void SetTexture(const char* path);
 
 protected:
-	virtual void Update();
-	virtual void Draw();
-	
-private:
-	void SetTexture(SDL_Texture* tex);
-
 	float x, y;
 	bool isVisible;
-	SDL_Rect* rect;
+	SDL_Rect* dstRect;
 	SDL_Rect* srcRect;
 	SDL_Texture* texture;
+	
+	virtual void Update();
+	virtual void Draw();
+	void SetTexture(SDL_Texture* tex);
+
+private:
+	
 };
 

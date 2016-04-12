@@ -1,14 +1,15 @@
 #pragma once
 
-#include "Sprite.h"
+#include "SpriteAnimation.h"
+
 
 class Renaud :
-	public Sprite
+	public SpriteAnimation
 {
 public:
 	Renaud();
 	~Renaud();
 
-	void Update();
+	
 };
 

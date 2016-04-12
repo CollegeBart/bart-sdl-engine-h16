@@ -84,6 +84,7 @@ int main(int argc, char* args[])
 
 	// Creation de nos objets de jeu.
 	//Sprite* renaud = new Sprite("Images\\JeSuisRenaud.png");
+	Sprite* sprite = new Sprite("Images\\JeSuisRenaud.png");
 	Renaud* renaud = new Renaud();
 	TestEnvironment* env = new TestEnvironment();
 	

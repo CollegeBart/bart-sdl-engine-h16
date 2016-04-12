@@ -26,6 +26,7 @@ public:
 	bool Init(const char* title, int width, int height);
 	void Run();
 
+	Timer* GetTimer() { return timer; }
 	Input* GetInput() { return input; }
 	SDL_Renderer* GetRenderer() { return renderer; }
 	Resources* GetResources() { return resources; }
@@ -39,6 +40,7 @@ private:
 	bool isInitialized;
 	bool isRunning;
 
+	Timer* timer;
 	SDL_Event* event;
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer;

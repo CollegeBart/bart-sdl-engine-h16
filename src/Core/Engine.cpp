@@ -10,6 +10,7 @@ Engine::Engine()
 	, input(nullptr)
 	, resources(nullptr)
 {
+	timer = new Timer();
 	event = new SDL_Event();
 }
 
@@ -21,7 +22,7 @@ Engine::~Engine()
 	delete event;
 	delete resources;
 	delete input;
-
+	delete timer;
 	SDL_Quit();
 }
 
@@ -77,7 +78,7 @@ void Engine::Run()
 {
 	Start();
 
-	while (isRunning || GInput->IsKeyReleased(SDL_SCANCODE_ESCAPE)))
+	while (isRunning)
 	{
 		while (SDL_PollEvent(event) != 0)
 		{
@@ -118,6 +119,8 @@ void Engine::Start()
 	{
 		(*iter)->Start();
 	}
+	timer->ResetTimer();
+	timer->StartTimer();
 }
 
 void Engine::Update() 
@@ -129,6 +132,7 @@ void Engine::Update()
 	{
 		(*iter)->Update();
 	}
+		 timer->UpdateTimer();
 }
 
 void Engine::Draw() 
