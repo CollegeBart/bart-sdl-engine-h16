@@ -32,7 +32,7 @@ void SpriteAnimation::Update()
 		srcRect->x = 0;
 		currFrame = 0;
 	}
-	if (GEngine->GetTimer()->GetCurrTime() > (prevFrameTime + 200))
+	if (GEngine->GetTimer()->GetCurrTime() > (prevFrameTime + (1000/numFrames)))
 	{
 		std::cout <<"srcRectx = " << srcRect->x << std::endl;
 		srcRect->x += srcRect->w;
