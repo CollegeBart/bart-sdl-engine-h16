@@ -10,6 +10,7 @@ Engine::Engine()
 	, input(nullptr)
 	, resources(nullptr)
 {
+	timer = new Timer();
 	event = new SDL_Event();
 }
 
@@ -21,7 +22,7 @@ Engine::~Engine()
 	delete event;
 	delete resources;
 	delete input;
-
+	delete timer;
 	SDL_Quit();
 }
 
@@ -118,6 +119,8 @@ void Engine::Start()
 	{
 		(*iter)->Start();
 	}
+	timer->ResetTimer();
+	timer->StartTimer();
 }
 
 void Engine::Update() 
@@ -129,6 +132,7 @@ void Engine::Update()
 	{
 		(*iter)->Update();
 	}
+		 timer->UpdateTimer();
 }
 
 void Engine::Draw() 
