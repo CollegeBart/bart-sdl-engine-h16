@@ -84,8 +84,8 @@ int main(int argc, char* args[])
 	GEngine->Init("TestEnvironment", 800, 600);
 
 	// Creation de nos objets de jeu.
-	//Sprite* renaud = new Sprite("Images\\JeSuisRenaud.png");
-	//Renaud* renaud = new Renaud();
+	Sprite* sprite= new Sprite("Images\\JeSuisRenaud.png");
+	Renaud* renaud = new Renaud();
 	TestEnvironment* env = new TestEnvironment();
 	
 	b2Vec2 gravity(0.0f, -10.0f);
@@ -111,7 +111,7 @@ int main(int argc, char* args[])
 
 	GEngine->Run();
 
-	//delete renaud;
+	delete renaud;
 
 	#pragma endregion
 
