@@ -28,3 +28,5 @@
 #include "Resources.h"
 #include "Component.h"
 #include "Timer.h"
+#include "Transform.h"
+#include "Vector3.h"
