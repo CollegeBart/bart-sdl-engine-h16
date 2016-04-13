@@ -1,14 +1,20 @@
 #include "TestEnvironment.h"
 
 TestEnvironment::TestEnvironment()
+	: isDoneTen(false)
+	, isDoneHundred(false)
 {
 	// Sprites
 	sprite = new Sprite("Images\\JeSuisRenaud.png");
 	renaud = new Renaud();
+	testSprite = new Sprite("Images\\course.png", 100, 300);
 
 	// Fonts
 	SDL_Rect* textRect = new SDL_Rect();
-	test = new Font("#define RENAUD as NULL", textRect);
+	std::stringstream ss;
+	ss << std::setw(3) << std::setfill(' ') << 0;
+	test = new Font(ss.str().c_str(), textRect);
+	
 
 	//b2Vec2 gravity(0.0f, -10.0f);
 	//b2World world(gravity);
@@ -53,8 +59,8 @@ void TestEnvironment::Update()
 		std::cout << "Held!" << std::endl;
 	}
 	#pragma endregion
-	
-	std::string s = std::to_string(GTimer->GetTimeInSeconds());
-	char const *pchar = s.c_str();
-	test->SetText(pchar);
+	// TIMER
+	std::stringstream ss;
+	ss << std::setw(3) << std::setfill(' ') << GTimer->GetTimeInSeconds();
+	test->SetText(ss.str().c_str());
 }

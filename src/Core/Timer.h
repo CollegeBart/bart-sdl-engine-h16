@@ -25,7 +25,6 @@ private:
 	Uint64 fPrevTime;
 	Uint64 fCurrTime;
 	double deltaTime;
-
 	int64_t startTime;
 	int64_t currTime;
 
