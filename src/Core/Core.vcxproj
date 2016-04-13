@@ -74,8 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\..\libs\SDL2_ttf\include;..\..\libs\SDL2_image\include;..\..\libs\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\libs\SDL2_TTF\lib\x64;..\..\libs\SDL2_image\lib\x64;..\..\libs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\libs\SDL2_image\include;..\..\libs\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\libs\SDL2_image\lib\x64;..\..\libs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -151,8 +151,8 @@
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteAnimation.cpp" />
-    <ClCompile Include="TextManager.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -162,9 +162,10 @@
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteAnimation.h" />
-    <ClInclude Include="TextManager.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

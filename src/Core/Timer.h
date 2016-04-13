@@ -21,7 +21,7 @@ public:
 
 private:
 	bool isRunning;
-	
+
 	Uint64 fPrevTime;
 	Uint64 fCurrTime;
 	double deltaTime;
