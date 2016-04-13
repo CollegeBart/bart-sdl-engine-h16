@@ -1,4 +1,3 @@
-
 // Conteneur STL -> Standard Template Library
 // Insertion rapide par l'avant ou par l'arriere.
 // Random access operator
@@ -31,7 +30,7 @@ int main(int argc, char* args[])
 	
 	b2Vec2 gravity(0.0f, -10.0f);
 	b2World world(gravity);
-
+	
 
 	b2BodyDef myBodyDef;
 	myBodyDef.type = b2_dynamicBody; 

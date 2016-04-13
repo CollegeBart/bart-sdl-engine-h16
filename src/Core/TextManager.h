@@ -1,5 +1,5 @@
 #pragma once
-#include "Common.h"
+
 #include "Engine.h"
 #include "Sprite.h"
 class TextManager : public Sprite
