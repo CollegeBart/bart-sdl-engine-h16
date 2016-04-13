@@ -37,5 +37,5 @@ void TextManager::Draw()
 
 void TextManager::Update()
 {
-	SetsurfaceMessage((char*)GTimer->GetTimeInSeconds());
+	SetsurfaceMessage("TEST");
 }
