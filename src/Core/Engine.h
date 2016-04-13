@@ -24,7 +24,7 @@ private:
 public:
 	bool Init();
 	bool Init(const char* title, int width, int height);
-	void Run();
+	int Run();
 
 	Timer* GetTimer() { return timer; }
 	Input* GetInput() { return input; }

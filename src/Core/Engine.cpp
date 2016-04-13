@@ -19,6 +19,8 @@ Engine::~Engine()
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 
+	TTF_Quit();
+
 	delete event;
 	delete resources;
 	delete input;
@@ -64,8 +66,16 @@ bool Engine::Init(const char* title, int width, int height)
 				}
 				else
 				{
-					input = new Input();
-					resources = new Resources(renderer);
+					if (TTF_Init() == -1)
+					{
+						printf("TTF_Init() Failed: SDL_Error: %s\n", TTF_GetError());
+					}
+					else
+					{
+						input = new Input();
+						resources = new Resources(renderer);
+					}
+
 					isInitialized = true;
 				}
 			}
@@ -74,7 +84,7 @@ bool Engine::Init(const char* title, int width, int height)
 	return isInitialized;
 }
 
-void Engine::Run()
+int Engine::Run()
 {
 	Start();
 
@@ -106,6 +116,8 @@ void Engine::Run()
 	}
 
 	Stop();
+
+	return 0;
 }
 
 void Engine::Start() 
