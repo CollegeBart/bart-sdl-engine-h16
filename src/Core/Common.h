@@ -19,8 +19,12 @@
 #include "SDL.h"
 #include "SDL_image.h"
 
+// Box2D Lib
+#include "Box2D.h"
+
 // Custom includes
 #include "Vector2.h"
 #include "Input.h"
 #include "Resources.h"
 #include "Component.h"
+

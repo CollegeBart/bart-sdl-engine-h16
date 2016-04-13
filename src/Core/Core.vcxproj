@@ -74,8 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\..\libs\SDL2_image\include;..\..\libs\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\libs\SDL2_image\lib\x64;..\..\libs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\libs\Box2D;..\..\libs\SDL2_image\include;..\..\libs\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\libs\Box2D;..\..\libs\SDL2_image\lib\x64;..\..\libs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Engine.h" />
