@@ -144,7 +144,7 @@ void Engine::Update()
 	{
 		(*iter)->Update();
 	}
-		 timer->UpdateTimer();
+	timer->Tick();
 }
 
 void Engine::Draw() 

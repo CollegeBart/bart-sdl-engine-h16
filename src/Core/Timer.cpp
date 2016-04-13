@@ -36,7 +36,7 @@ void Timer::StartTimer()
 	}
 }
 
-void Timer::UpdateTimer()
+void Timer::Tick()
 {
 	fPrevTime = fCurrTime;
 	fCurrTime = SDL_GetPerformanceCounter();

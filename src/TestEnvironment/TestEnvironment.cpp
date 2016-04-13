@@ -12,18 +12,18 @@ TestEnvironment::TestEnvironment()
 
 	//b2Vec2 gravity(0.0f, -10.0f);
 	//b2World world(gravity);
-	//
+	
 	//b2BodyDef myBodyDef;
 	//myBodyDef.type = b2_dynamicBody;
 	//myBodyDef.position.Set(0, 20);
 	//myBodyDef.angle = 0;
-	//
+	
 	//b2Body* myBody;
-	//
+	
 	//myBody = world.CreateBody(&myBodyDef);
 	//b2PolygonShape boxShape;
 	//boxShape.SetAsBox(1, 1);
-	//
+	
 	//b2FixtureDef boxFixtureDef;
 	//boxFixtureDef.shape = &boxShape;
 	//boxFixtureDef.density = 1;

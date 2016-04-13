@@ -16,7 +16,7 @@ public:
 
 	void ResetTimer();
 	void StartTimer();
-	void UpdateTimer();
+	void Tick();
 	void ShowTime();
 
 private:
