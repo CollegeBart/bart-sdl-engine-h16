@@ -5,9 +5,12 @@ TestEnvironment::TestEnvironment()
 	, isDoneHundred(false)
 {
 	// Sprites
-	sprite = new Sprite("Images\\JeSuisRenaud.png");
+	//sprite = new Sprite("Images\\JeSuisRenaud.png");
+	scrolling = new BackGroundScroller(230, 250, "Images\\level.png", 2, true);
 	renaud = new Renaud();
 	testSprite = new Sprite("Images\\course.png", 100, 300);
+	
+
 
 	// Fonts
 	SDL_Rect* textRect = new SDL_Rect();
@@ -59,7 +62,7 @@ void TestEnvironment::Update()
 		std::cout << "Held!" << std::endl;
 	}
 	#pragma endregion
-	// TIMER
+	// TIMER 
 	std::stringstream ss;
 	ss << std::setw(3) << std::setfill(' ') << GTimer->GetTimeInSeconds();
 	test->SetText(ss.str().c_str());

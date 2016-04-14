@@ -8,7 +8,7 @@
 
 int main(int argc, char* args[])
 {
-	GEngine->Init("TestEnvironment", 800, 600);
+	GEngine->Init("TestEnvironment", 400, 300);
 
 	TestEnvironment* env = new TestEnvironment();
 

@@ -80,6 +80,25 @@ Sprite::Sprite(int srcH, int srcW, const char * path)
 	SetTexture(path);
 }
 
+Sprite::Sprite(int srcH, int srcW, const char * path, bool fullScreen)
+	: x(0.f), y(0.f)
+	, isVisible(true)
+	, texture(nullptr)
+	, dstRect(nullptr)
+	, srcRect(nullptr)
+	, isFullScreen(fullScreen)
+{
+	dstRect = new SDL_Rect();
+	srcRect = new SDL_Rect();
+	dstRect->x = x;
+	dstRect->y = y;
+	srcRect->h = srcH;
+	srcRect->w = srcW;
+	srcRect->x = 0;
+	srcRect->y = 0;
+	SetTexture(path);
+}
+
 Sprite::~Sprite()
 {
 	delete dstRect;
@@ -127,7 +146,12 @@ void Sprite::Draw()
 			dstRect->x = x;
 			dstRect->y = y;
 
-			SDL_RenderCopy(GRenderer, texture, srcRect, dstRect);
+			if (!isFullScreen)
+			{
+				SDL_RenderCopy(GRenderer, texture, srcRect, dstRect);
+			}
+			else
+				SDL_RenderCopy(GRenderer, texture, srcRect, 0);
 		}
 	}
 }
