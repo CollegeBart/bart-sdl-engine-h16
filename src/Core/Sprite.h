@@ -8,6 +8,7 @@ class Sprite :
 {
 public:
 	Sprite();
+	Sprite(float x, float y);
 	Sprite(const char* path);
 	Sprite(const char* path, float x, float y);
 	Sprite(int srcH, int srcW, const char* path, float x, float y);
