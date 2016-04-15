@@ -8,10 +8,15 @@ public:
 	Physics();
 	~Physics();
 
+	//Step is the physics "update"
 	void Step();
+	//Physics use a "world" object responsible for body creation
 	b2World GetWorld() { return world; }
+	//This will listen if colliders interact
 	void SetContactListener(b2ContactListener* listener);
-	b2Body* CreateBody(int x, int y, b2BodyType type);
+	//Fonction to create a "body" object
+	b2Body* CreateBody(int posX, int posY, b2BodyType bodyType);
+	//Destroy a body object
 	void DestroyBody(b2Body* body);
 private:
 	b2Vec2 gravity;

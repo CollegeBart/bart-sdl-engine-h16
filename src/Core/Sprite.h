@@ -1,7 +1,7 @@
 #pragma once
 
+#include "Component.h"
 #include "Engine.h"
-
 
 class Sprite :
 	public Component
