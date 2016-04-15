@@ -5,6 +5,7 @@
 #define GRenderer	GEngine->GetRenderer()
 #define GInput		GEngine->GetInput()
 #define GTimer		GEngine->GetTimer()
+#define GPhysics	GEngine->GetPhysics()
 
 #define TITLE_DEFAULT "BartEngine::"
 #define SCREEN_WIDTH_DEFAULT 1280
@@ -29,5 +30,7 @@
 #include "Resources.h"
 #include "Component.h"
 #include "Timer.h"
+#include "Physics.h"
+
 
 
