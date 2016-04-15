@@ -37,24 +37,10 @@ void BackGroundScroller::Update()
 {
 	if (isAutoScrolling)
 	{
-		if (GTimer->GetCurrTime() > (prevFrameTime + 100))
+		if (GTimer->GetCurrTime() > (prevFrameTime + 10))
 		{
 			srcRect->x += normalSpeed;
 			prevFrameTime = GTimer->GetCurrTime();
 		}
 	}
-	else
-	{	// Detect if player is at X in screen make image scroll to the right
-		if (true)
-		{
-			srcRect->x += normalSpeed;
-		}
-		// Else if at oposite X scroll to the left
-		else if (true)
-		{
-			srcRect->x -= normalSpeed;
-		}
-	}
-
-
 }

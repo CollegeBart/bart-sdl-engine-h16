@@ -6,7 +6,7 @@ TestEnvironment::TestEnvironment()
 {
 	// Sprites
 	//sprite = new Sprite("Images\\JeSuisRenaud.png");
-	scrolling = new BackGroundScroller(230, 250, "Images\\level.png", 2, true);
+	scrolling = new BackGroundScroller(230, 250, "Images\\level.png", 1, true);
 	renaud = new Renaud();
 	testSprite = new Sprite("Images\\course.png", 100, 300);
 	
