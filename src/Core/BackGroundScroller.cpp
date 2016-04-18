@@ -9,6 +9,7 @@ BackGroundScroller::BackGroundScroller()
 	, prevFrameTime(0)
 	, isAutoScrolling(false)
 {
+
 }
 
 BackGroundScroller::BackGroundScroller(int srcH, int srcW, const char * path, float speed, bool isAutoScrolling)
@@ -17,6 +18,7 @@ BackGroundScroller::BackGroundScroller(int srcH, int srcW, const char * path, fl
 	, prevFrameTime(0)
 	, isAutoScrolling(isAutoScrolling)
 {
+
 }
 
 BackGroundScroller::BackGroundScroller(int srcH, int srcW, const char * path, float speed, float scrollSpeed, bool isAutoScrolling)
@@ -26,6 +28,7 @@ BackGroundScroller::BackGroundScroller(int srcH, int srcW, const char * path, fl
 	, prevFrameTime(0)
 	, isAutoScrolling(isAutoScrolling)
 {
+
 }
 
 
