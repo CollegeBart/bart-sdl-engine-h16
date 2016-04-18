@@ -10,18 +10,14 @@ public:
 	Collider();
 	virtual ~Collider();
 
-	//Will be able to add more shapes for collider (like sphere polygon, etc)
-	enum ColliderType
-	{
-		SQUARE_COLLIDER = 0,
-	};
-
-
+	void CreateCollider(float posX, float posY, float width, float heigth, b2BodyType bodType, int type );
 	//Remove a body object
 	void DeleteCollider();
 
 	b2Body* GetBody() { return body; }
 
 private:
+	virtual void Update();
+	virtual void Draw();
 	b2Body* body;
 };
