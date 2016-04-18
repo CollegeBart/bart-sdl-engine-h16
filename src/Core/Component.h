@@ -2,6 +2,7 @@
 
 #include "Common.h"
 
+
 class Component
 {
 public:
@@ -10,15 +11,11 @@ public:
 	Component();
 	~Component();
 
-	
-
 protected:
 	virtual void Start();
 	virtual void Update() = 0;
 	virtual void Draw();
 	virtual void Stop();
-
-	
 
 private:
 	static std::vector<Component*> components;

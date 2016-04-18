@@ -18,21 +18,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Animal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mammifere.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Poule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cochon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vache.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Renaud.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -41,21 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mammifere.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Poule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cochon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vache.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Renaud.h">
       <Filter>Header Files</Filter>
     </ClInclude>

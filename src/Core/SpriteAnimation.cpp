@@ -7,7 +7,7 @@ SpriteAnimation::SpriteAnimation()
 }
 
 SpriteAnimation::SpriteAnimation(int srcH, int srcW, const char * path, int numFrames)
-	:Sprite(srcH, srcW, path)
+	: Sprite(srcH, srcW, path)
 	, numFrames(numFrames)
 	, currFrame(0)
 	, prevFrameTime(0)

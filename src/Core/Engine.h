@@ -2,6 +2,7 @@
 
 #include "Common.h"
 
+
 class Engine
 {
 
@@ -24,12 +25,13 @@ private:
 public:
 	bool Init();
 	bool Init(const char* title, int width, int height);
-	void Run();
+	int Run();
 
 	Timer* GetTimer() { return timer; }
 	Input* GetInput() { return input; }
 	SDL_Renderer* GetRenderer() { return renderer; }
 	Resources* GetResources() { return resources; }
+	Physics* GetPhysics() { return physics; }
 	
 private:
 	void Start();
@@ -44,6 +46,7 @@ private:
 	SDL_Event* event;
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer;
+	Physics* physics;
 
 	Input* input;
 	Resources* resources;
