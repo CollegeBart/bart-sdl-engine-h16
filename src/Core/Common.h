@@ -27,6 +27,6 @@
 #include "Vector2.h"
 #include "Input.h"
 #include "Resources.h"
-#include "Component.h"
+//#include "Component.h"
 #include "Timer.h"
 

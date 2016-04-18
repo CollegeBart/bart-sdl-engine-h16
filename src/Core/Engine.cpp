@@ -124,26 +124,26 @@ void Engine::Start()
 {
 	isRunning = true;
 
-	std::vector<Component*>::iterator iter;
-	for (iter = Component::components.begin();
-	iter != Component::components.end();
-		iter++)
-	{
-		(*iter)->Start();
-	}
+	//std::vector<Component*>::iterator iter;
+	//for (iter = Component::components.begin();
+	//iter != Component::components.end();
+	//	iter++)
+	//{
+	//	(*iter)->Start();
+	//}
 	timer->ResetTimer();
 	timer->StartTimer();
 }
 
 void Engine::Update() 
 {
-	std::vector<Component*>::iterator iter;
-	for (iter = Component::components.begin(); 
-		 iter != Component::components.end();
-		 iter++)
-	{
-		(*iter)->Update();
-	}
+	//std::vector<Component*>::iterator iter;
+	//for (iter = Component::components.begin(); 
+	//	 iter != Component::components.end();
+	//	 iter++)
+	//{
+	//	(*iter)->Update();
+	//}
 		 timer->UpdateTimer();
 }
 
@@ -151,24 +151,24 @@ void Engine::Draw()
 {
 	SDL_RenderClear(renderer);
 
-	std::vector<Component*>::iterator iter;
-	for (iter = Component::components.begin();
-	iter != Component::components.end();
-		iter++)
-	{
-		(*iter)->Draw();
-	}
-
+	//std::vector<Component*>::iterator iter;
+	//for (iter = Component::components.begin();
+	//iter != Component::components.end();
+	//	iter++)
+	//{
+	//	(*iter)->Draw();
+	//}
+	
 	SDL_RenderPresent(renderer);
 }
 
 void Engine::Stop() 
 {
-	std::vector<Component*>::iterator iter;
-	for (iter = Component::components.begin();
-	iter != Component::components.end();
-		iter++)
-	{
-		(*iter)->Stop();
-	}
+	//std::vector<Component*>::iterator iter;
+	//for (iter = Component::components.begin();
+	//iter != Component::components.end();
+	//	iter++)
+	//{
+	//	(*iter)->Stop();
+	//}
 }

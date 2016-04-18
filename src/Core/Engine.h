@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Common.h"
+#include "IScene.h"
 
 class Engine
 {
@@ -30,6 +31,18 @@ public:
 	Input* GetInput() { return input; }
 	SDL_Renderer* GetRenderer() { return renderer; }
 	Resources* GetResources() { return resources; }
+
+	std::string GetCurrentSceneName() { return currentScene; }
+
+
+	IScene* GetCurrentScene() { return GetScene(currentScene); }
+	IScene* GetScene(std::string sceneName) { return scenes[sceneName]; }
+
+	void AddScene(const char* sceneName, IScene* scene)
+	{
+		scenes[sceneName] = scene;
+	}
+
 	
 private:
 	void Start();
@@ -47,5 +60,8 @@ private:
 
 	Input* input;
 	Resources* resources;
+
+	std::string currentScene;
+	std::map<std::string, IScene*> scenes;
 };
 

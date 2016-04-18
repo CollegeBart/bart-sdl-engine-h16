@@ -1,7 +1,11 @@
 #include "TestEnvironment.h"
 
+#include "Scene.h"
+
 TestEnvironment::TestEnvironment()
 {
+	Scene* scene = new Scene("Default");
+
 	// Sprites
 	sprite = new Sprite("Images\\JeSuisRenaud.png");
 	renaud = new Renaud();
