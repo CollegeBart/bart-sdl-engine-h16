@@ -53,3 +53,8 @@ void SpriteAnimation::Draw()
 		}
 	}
 }
+
+void SpriteAnimation::AnimateUpDown()
+{
+
+}
