@@ -12,6 +12,7 @@ Engine::Engine()
 {
 	timer = new Timer();
 	event = new SDL_Event();
+	physics = new Physics();
 }
 
 Engine::~Engine()
@@ -25,6 +26,7 @@ Engine::~Engine()
 	delete resources;
 	delete input;
 	delete timer;
+	delete physics;
 	SDL_Quit();
 }
 
@@ -144,13 +146,14 @@ void Engine::Update()
 	//{
 	//	(*iter)->Update();
 	//}
-		 timer->UpdateTimer();
+
+	timer->Tick();
+	physics->Step();
 }
 
 void Engine::Draw() 
 {
 	SDL_RenderClear(renderer);
-
 	//std::vector<Component*>::iterator iter;
 	//for (iter = Component::components.begin();
 	//iter != Component::components.end();

@@ -6,7 +6,8 @@ Timer::Timer()
 	:startTime(0)
 	,currTime(0)
 {
-}
+	
+}	
 
 
 Timer::~Timer()
@@ -36,7 +37,7 @@ void Timer::StartTimer()
 	}
 }
 
-void Timer::UpdateTimer()
+void Timer::Tick()
 {
 	fPrevTime = fCurrTime;
 	fCurrTime = SDL_GetPerformanceCounter();
@@ -48,4 +49,5 @@ void Timer::UpdateTimer()
 void Timer::ShowTime()
 {
 	
+
 }

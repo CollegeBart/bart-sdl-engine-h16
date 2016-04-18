@@ -3,6 +3,7 @@
 #include "Common.h"
 #include "IScene.h"
 
+
 class Engine
 {
 
@@ -31,7 +32,7 @@ public:
 	Input* GetInput() { return input; }
 	SDL_Renderer* GetRenderer() { return renderer; }
 	Resources* GetResources() { return resources; }
-
+	Physics* GetPhysics() { return physics; }
 	std::string GetCurrentSceneName() { return currentScene; }
 
 
@@ -57,6 +58,7 @@ private:
 	SDL_Event* event;
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer;
+	Physics* physics;
 
 	Input* input;
 	Resources* resources;

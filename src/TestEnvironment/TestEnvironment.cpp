@@ -3,31 +3,40 @@
 #include "Scene.h"
 
 TestEnvironment::TestEnvironment()
+	: isDoneTen(false)
+	, isDoneHundred(false)
 {
 	Scene* scene = new Scene("Default");
 
 	// Sprites
-	sprite = new Sprite("Images\\JeSuisRenaud.png");
+	//sprite = new Sprite("Images\\JeSuisRenaud.png");
+	scrolling = new BackGroundScroller(230, 250, "Images\\level.png", 1, true);
 	renaud = new Renaud();
+	testSprite = new Sprite("Images\\course.png", 100, 300);
+	
+
 
 	// Fonts
 	SDL_Rect* textRect = new SDL_Rect();
-	test = new Font("#define RENAUD as NULL", textRect);
+	std::stringstream ss;
+	ss << std::setw(3) << std::setfill(' ') << 0;
+	test = new Font(ss.str().c_str(), textRect);
+	
 
 	//b2Vec2 gravity(0.0f, -10.0f);
 	//b2World world(gravity);
-	//
+	
 	//b2BodyDef myBodyDef;
 	//myBodyDef.type = b2_dynamicBody;
 	//myBodyDef.position.Set(0, 20);
 	//myBodyDef.angle = 0;
-	//
+	
 	//b2Body* myBody;
-	//
+	
 	//myBody = world.CreateBody(&myBodyDef);
 	//b2PolygonShape boxShape;
 	//boxShape.SetAsBox(1, 1);
-	//
+	
 	//b2FixtureDef boxFixtureDef;
 	//boxFixtureDef.shape = &boxShape;
 	//boxFixtureDef.density = 1;
@@ -57,8 +66,8 @@ void TestEnvironment::Update()
 		std::cout << "Held!" << std::endl;
 	}
 	#pragma endregion
-	
-	std::string s = std::to_string(GTimer->GetTimeInSeconds());
-	char const *pchar = s.c_str();
-	test->SetText(pchar);
+	// TIMER 
+	std::stringstream ss;
+	ss << std::setw(3) << std::setfill(' ') << GTimer->GetTimeInSeconds();
+	test->SetText(ss.str().c_str());
 }

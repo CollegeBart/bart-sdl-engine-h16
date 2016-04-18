@@ -11,6 +11,7 @@ public:
 	Font(const char* text);
 	Font(const char* text, SDL_Rect* dstRect);
 	~Font();
+	SDL_Surface* GetSurfaceMessage() { return surfaceMessage; }
 
 	void SetText(const char* text);
 
