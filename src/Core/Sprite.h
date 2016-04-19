@@ -15,7 +15,7 @@ public:
 	Sprite(int srcH, int srcW, const char* path);
 	Sprite(int srcH, int srcW, const char* path, bool fullScreen);
 	virtual ~Sprite();
-
+	
 	void SetTexture(const char* path);
 
 protected:
