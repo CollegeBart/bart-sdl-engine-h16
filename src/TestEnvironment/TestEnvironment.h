@@ -2,7 +2,7 @@
 
 #include "Engine.h"
 #include "Common.h"
-
+#include "Collider.h"
 #include "Renaud.h"
 #include "BackGroundScroller.h"
 #include "Font.h"
@@ -25,5 +25,6 @@ private:
 	Renaud* renaud;
 	BackGroundScroller* scrolling;
 	Font* test;
+	Collider* col;
 };
 

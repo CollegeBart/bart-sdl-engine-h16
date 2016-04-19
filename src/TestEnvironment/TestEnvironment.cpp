@@ -10,7 +10,8 @@ TestEnvironment::TestEnvironment()
 	renaud = new Renaud();
 	testSprite = new Sprite("Images\\course.png", 100, 300);
 	
-
+	col = new Collider();
+	col->CreateCollider(10, 10, 20, 20, b2_dynamicBody, 0);
 
 	// Fonts
 	SDL_Rect* textRect = new SDL_Rect();
@@ -18,25 +19,6 @@ TestEnvironment::TestEnvironment()
 	ss << std::setw(3) << std::setfill(' ') << 0;
 	test = new Font(ss.str().c_str(), textRect);
 	
-
-	//b2Vec2 gravity(0.0f, -10.0f);
-	//b2World world(gravity);
-	
-	//b2BodyDef myBodyDef;
-	//myBodyDef.type = b2_dynamicBody;
-	//myBodyDef.position.Set(0, 20);
-	//myBodyDef.angle = 0;
-	
-	//b2Body* myBody;
-	
-	//myBody = world.CreateBody(&myBodyDef);
-	//b2PolygonShape boxShape;
-	//boxShape.SetAsBox(1, 1);
-	
-	//b2FixtureDef boxFixtureDef;
-	//boxFixtureDef.shape = &boxShape;
-	//boxFixtureDef.density = 1;
-	//myBody->CreateFixture(&boxFixtureDef);
 }
 
 TestEnvironment::~TestEnvironment()
@@ -61,6 +43,7 @@ void TestEnvironment::Update()
 	{
 		std::cout << "Held!" << std::endl;
 	}
+
 	#pragma endregion
 	// TIMER 
 	std::stringstream ss;

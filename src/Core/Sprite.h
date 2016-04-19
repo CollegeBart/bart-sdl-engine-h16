@@ -17,6 +17,9 @@ public:
 	virtual ~Sprite();
 	
 	void SetTexture(const char* path);
+	float GetY() { return y; }
+	void SetX(float x) { this->x = x; }
+	void SetY(float y) { this->y = y; }
 
 protected:
 	float x, y;

@@ -15,6 +15,7 @@ private:
 	int prevFrameTime;
 	void Update();
 	virtual void Draw();
+	void AnimateUpDown();
 
 
 	

@@ -7,18 +7,13 @@ Physics::Physics()
 	, positionIterations(2)
 	, timeStep(1.0f / 60.0f)
 {
-
+	listener = new b2ContactListener();
+	world.SetContactListener(listener);
 }
 
 Physics::~Physics()
 {
 	bodies.clear();
-}
-
-void Physics::SetContactListener(b2ContactListener* listener) 
-{ 
-	//Call to the "world" object to listen contacts
-	world.SetContactListener(listener); 
 }
 
 void Physics::Step()
