@@ -10,8 +10,8 @@ TestEnvironment::TestEnvironment()
 	renaud = new Renaud();
 	testSprite = new Sprite("Images\\course.png", 100, 300);
 	
-	col = new Collider();
-	col->CreateCollider(10, 10, 20, 20, b2_dynamicBody, 0);
+	col = new Collider(10, 10, 20, 20, b2_dynamicBody, 0);
+	
 
 	// Fonts
 	SDL_Rect* textRect = new SDL_Rect();
