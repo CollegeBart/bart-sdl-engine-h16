@@ -9,7 +9,7 @@ class Font
 public:
 	Font();
 	Font(const char* text);
-	Font(const char* text, SDL_Rect* dstRect);
+	Font(const char* text, float x, float y);
 	~Font();
 	SDL_Surface* GetSurfaceMessage() { return surfaceMessage; }
 

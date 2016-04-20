@@ -9,6 +9,7 @@ Engine::Engine()
 	, event(0)
 	, input(nullptr)
 	, resources(nullptr)
+	, currentScene(DEFAULT_SCENE_NAME)
 {
 	timer = new Timer();
 	event = new SDL_Event();
@@ -126,26 +127,15 @@ void Engine::Start()
 {
 	isRunning = true;
 
-	//std::vector<Component*>::iterator iter;
-	//for (iter = Component::components.begin();
-	//iter != Component::components.end();
-	//	iter++)
-	//{
-	//	(*iter)->Start();
-	//}
+	scenes[currentScene]->Start();
+
 	timer->ResetTimer();
 	timer->StartTimer();
 }
 
 void Engine::Update() 
 {
-	//std::vector<Component*>::iterator iter;
-	//for (iter = Component::components.begin(); 
-	//	 iter != Component::components.end();
-	//	 iter++)
-	//{
-	//	(*iter)->Update();
-	//}
+	scenes[currentScene]->Update();
 
 	timer->Tick();
 	physics->Step();
@@ -154,24 +144,13 @@ void Engine::Update()
 void Engine::Draw() 
 {
 	SDL_RenderClear(renderer);
-	//std::vector<Component*>::iterator iter;
-	//for (iter = Component::components.begin();
-	//iter != Component::components.end();
-	//	iter++)
-	//{
-	//	(*iter)->Draw();
-	//}
 	
+	scenes[currentScene]->Draw();
+
 	SDL_RenderPresent(renderer);
 }
 
 void Engine::Stop() 
 {
-	//std::vector<Component*>::iterator iter;
-	//for (iter = Component::components.begin();
-	//iter != Component::components.end();
-	//	iter++)
-	//{
-	//	(*iter)->Stop();
-	//}
+	scenes[currentScene]->Stop();
 }

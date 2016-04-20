@@ -1,23 +1,28 @@
 #pragma once
-#include "Common.h"
+
 #include "Engine.h"
-#include "IScene.h"
+#include "Component.h"
 
 class Scene : public IScene
 {
 public:
 	Scene();
-	~Scene();
+	Scene(const char* sceneName);
 
-	Scene(const char* sceneName)
-	{
-		Engine::GetInstance()->AddScene(sceneName, this);
-	}
+	~Scene();
 
 	void AddComponent(Component* c)
 	{
 		components.push_back(c);
 	}
 
+protected:
+	virtual void Start();
+	virtual void Update();
+	virtual void Draw();
+	virtual void Stop();
+
+private:
 	std::vector<Component*> components;
+
 };

@@ -1,8 +1,9 @@
 #pragma once
 
+#define DEFAULT_SCENE_NAME "Default"
+
 #include "Common.h"
 #include "IScene.h"
-
 
 class Engine
 {
@@ -35,7 +36,6 @@ public:
 	Physics* GetPhysics() { return physics; }
 	std::string GetCurrentSceneName() { return currentScene; }
 
-
 	IScene* GetCurrentScene() { return GetScene(currentScene); }
 	IScene* GetScene(std::string sceneName) { return scenes[sceneName]; }
 
@@ -44,7 +44,6 @@ public:
 		scenes[sceneName] = scene;
 	}
 
-	
 private:
 	void Start();
 	void Update();

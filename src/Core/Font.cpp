@@ -18,8 +18,8 @@ Font::Font(const char* text)
 	SetText(text);
 }
 
-Font::Font(const char * text, SDL_Rect * dstRect)
-	: Sprite(dstRect->x, dstRect->y)
+Font::Font(const char* text, float x, float y)
+	: Sprite(nullptr, x, y)
 	, font(nullptr)
 {
 	font = TTF_OpenFont("Fonts\\PressStart2P.ttf", 12);

@@ -1,131 +1,147 @@
 #include "Sprite.h"
 
 Sprite::Sprite()
-	: x(0.f), y(0.f)
-	, isVisible(true)
+	: Component(DEFAULT_SCENE_NAME)
+	, x(0.f), y(0.f)
+	, isVisible(false)
 	, texture(nullptr)
 	, dstRect(nullptr)
 	, srcRect(nullptr)
-	, isFullScreen(false)
 {
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
-	dstRect->x = x;
-	dstRect->y = y;
-}
-
-Sprite::Sprite(float x, float y)
-	: x(x), y(y)
-	, isVisible(true)
-	, texture(nullptr)
-	, dstRect(nullptr)
-	, srcRect(nullptr)
-	, isFullScreen(false)
-{
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
-	srcRect->h = 0;
-	srcRect->w = 0;
-	srcRect->x = 0;
-	srcRect->y = 0;
-	dstRect->x = x;
-	dstRect->y = y;
-}
-
-Sprite::Sprite(const char * path)
-	: x(0.f), y(0.f)
-	, isVisible(true)
-	, texture(nullptr)
-	, dstRect(nullptr)
-	, srcRect(nullptr)
-	, isFullScreen(false)
-{
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
-	dstRect->x = x;
-	dstRect->y = y;
-	SetTexture(path);
 }
 
 Sprite::Sprite(const char * path, float x, float y)
-	: x(x), y(y)
+	: Component(DEFAULT_SCENE_NAME)
+	, x(x), y(y)
 	, isVisible(true)
 	, texture(nullptr)
 	, dstRect(nullptr)
 	, srcRect(nullptr)
-	, isFullScreen(false)
 {
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
-	srcRect->h = 0;
-	srcRect->w = 0;
-	srcRect->x = 0;
-	srcRect->y = 0;
+	srcRect = new Rekt();
+	dstRect = new Rekt();
 	dstRect->x = x;
 	dstRect->y = y;
-	SetTexture(path);	
-}
-Sprite::Sprite(int srcH, int srcW, const char * path, float x, float y)
-	: x(x), y(y)
-	, isVisible(true)
-	, texture(nullptr)
-	, dstRect(nullptr)
-	, srcRect(nullptr)
-	, isFullScreen(false)
-{
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
-	dstRect->x = x;
-	dstRect->y = y;
-	srcRect->x = 0;
-	srcRect->y = 0;
-	srcRect->h = srcH;
-	srcRect->w = srcW;
-	SetTexture(path);
+
+	if (path != nullptr)
+	{
+		SetTexture(path);
+		if (texture) 
+		{
+			int* w = new int();
+			int* h = new int();
+			
+			SDL_QueryTexture(texture, 0, 0, w, h);
+
+			dstRect->w = *w;
+			dstRect->h = *h;
+
+			delete w;
+			delete h;
+		}
+	}
 }
 
-Sprite::Sprite(int srcH, int srcW, const char * path)
-	: x(0.f), y(0.f)
+Sprite::Sprite(const char * path, Rekt * src, Rekt * dst)
+	: Component(DEFAULT_SCENE_NAME)
+	, x(dst->x), y(dst->y)
 	, isVisible(true)
 	, texture(nullptr)
-	, dstRect(nullptr)
-	, srcRect(nullptr)
-	, isFullScreen(false)
-{
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
-	dstRect->x = x;
-	dstRect->y = y;
-	srcRect->h = srcH;
-	srcRect->w = srcW;
-	srcRect->x = 0;
-	srcRect->y = 0;
-	SetTexture(path);
+	, srcRect(src)
+	, dstRect(dst)
+{	
+	if (path != nullptr)
+	{
+		SetTexture(path);
+	}
 }
 
-Sprite::Sprite(int srcH, int srcW, const char * path, bool fullScreen)
-	: x(0.f), y(0.f)
+Sprite::Sprite(const char * path, Rekt * src, float x, float y)
+	: Component()
+	, x(x), y(y)
 	, isVisible(true)
 	, texture(nullptr)
+	, srcRect(src)
 	, dstRect(nullptr)
-	, srcRect(nullptr)
-	, isFullScreen(fullScreen)
 {
-	dstRect = new SDL_Rect();
-	srcRect = new SDL_Rect();
+	dstRect = new Rekt();
+	dstRect->x;
+	dstRect->y;
+
+	if (path != nullptr)
+	{
+		SetTexture(path);
+	}
+}
+
+Sprite::Sprite(const char * sceneName, const char * path, float x, float y)
+	: Component(sceneName)
+	, x(x), y(y)
+	, isVisible(true)
+	, texture(nullptr)
+	, srcRect(nullptr)
+	, dstRect(nullptr)
+{
+	dstRect = new Rekt();
+	srcRect = new Rekt();
 	dstRect->x = x;
 	dstRect->y = y;
-	srcRect->h = srcH;
-	srcRect->w = srcW;
-	srcRect->x = 0;
-	srcRect->y = 0;
-	SetTexture(path);
+
+	if (path != nullptr)
+	{
+		SetTexture(path);
+		if (texture)
+		{
+			int* w = new int();
+			int* h = new int();
+
+			SDL_QueryTexture(texture, 0, 0, w, h);
+
+			dstRect->w = *w;
+			dstRect->h = *h;
+
+			delete w;
+			delete h;
+		}
+	}
+}
+
+Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, Rekt * dst)
+	: Component(sceneName)
+	, x(dst->x), y(dst->y)
+	, isVisible(true)
+	, texture(nullptr)
+	, srcRect(src)
+	, dstRect(dst)
+{
+	if (path != nullptr)
+	{
+		SetTexture(path);
+	}
+}
+
+Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, float x, float y)
+	: Component(sceneName)
+	, x(x), y(y)
+	, isVisible(true)
+	, texture(nullptr)
+	, srcRect(src)
+	, dstRect(nullptr)
+{
+	dstRect = new Rekt();
+	dstRect->x;
+	dstRect->y;
+
+	if (path != nullptr)
+	{
+		SetTexture(path);
+	}
 }
 
 Sprite::~Sprite()
 {
-	delete dstRect;
 	delete srcRect;
+	delete dstRect;
 }
 
 void Sprite::SetTexture(SDL_Texture * tex)
@@ -134,26 +150,30 @@ void Sprite::SetTexture(SDL_Texture * tex)
 
 	if (dstRect != nullptr)
 	{
-		SDL_QueryTexture(tex, 0, 0, &dstRect->w, &dstRect->h);
 		if (srcRect->h == 0 && srcRect->w == 0)
 		{
-			SDL_QueryTexture(tex, 0, 0, &srcRect->w, &srcRect->h);
+			int* w = new int();
+			int* h = new int();
+
+			SDL_QueryTexture(texture, 0, 0, w, h);
+
+			dstRect->w = *w;
+			dstRect->h = *h;
+
+			delete w;
+			delete h;
 		}
 		else
 		{
 			dstRect->h = srcRect->h;
 			dstRect->w = srcRect->w;
-		}
-		
+		}	
 	}
-	
-	
 }
 
 void Sprite::SetTexture(const char * path)
 {
-	SetTexture(
-		GResources->GetTexture(path));
+	SetTexture(GResources->GetTexture(path));
 }
 
 void Sprite::Update()
@@ -171,10 +191,17 @@ void Sprite::Draw()
 
 			if (!isFullScreen)
 			{
-				SDL_RenderCopy(GRenderer, texture, srcRect, dstRect);
+				if (srcRect->w == 0 || srcRect->h == 0)
+				{
+					SDL_RenderCopy(GRenderer, texture, nullptr, &dstRect->GetRect());
+				}
+				else
+				{
+					SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect());
+				}
 			}
 			else
-				SDL_RenderCopy(GRenderer, texture, srcRect, 0);
+				SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), 0);
 		}
 	}
 }

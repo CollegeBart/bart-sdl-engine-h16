@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Common.h"
+#include "SDL.h"
+#include "SDL_image.h"
+#include <map>
 
 class Resources
 {

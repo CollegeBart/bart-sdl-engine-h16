@@ -1,14 +1,12 @@
 #pragma once
 
-#include "Common.h"
+//#include "Common.h"
 #include "Engine.h"
-#include "IScene.h"
-
 
 class Component
 {
 public:
-	friend class Engine;
+	friend class Scene;
 
 	Component();
 	Component(const char* sceneName);

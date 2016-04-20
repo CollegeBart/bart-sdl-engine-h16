@@ -1,9 +1,7 @@
 // Conteneur STL -> Standard Template Library
 // Insertion rapide par l'avant ou par l'arriere.
 // Random access operator
-#include <vector>
 #include <iostream>
-
 #include "TestEnvironment.h"
 
 int main(int argc, char* args[])
@@ -12,5 +10,9 @@ int main(int argc, char* args[])
 
 	TestEnvironment* env = new TestEnvironment();
 
-	return GEngine->Run();
+	int res = GEngine->Run();
+
+	delete env;
+
+	return res;
 }

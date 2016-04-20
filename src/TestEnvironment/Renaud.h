@@ -2,7 +2,6 @@
 
 #include "SpriteAnimation.h"
 
-
 class Renaud :
 	public SpriteAnimation
 {

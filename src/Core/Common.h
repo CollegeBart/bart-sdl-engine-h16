@@ -21,14 +21,15 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_ttf.h"
+
 // Box2D Lib
 #include "Box2D.h"
 
 // Custom includes
+#include "Rekt.h"
 #include "Vector2.h"
 #include "Input.h"
 #include "Resources.h"
-//#include "Component.h"
 #include "Timer.h"
 #include "Physics.h"
 

@@ -1,5 +1,7 @@
 #pragma once
-#include "Common.h"
+
+#include "SDL.h"
+
 class Timer
 {
 public:
@@ -27,7 +29,5 @@ private:
 	double deltaTime;
 	int64_t startTime;
 	int64_t currTime;
-
-
 };
 

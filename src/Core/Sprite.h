@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Engine.h"
 #include "Component.h"
 
 class Sprite :
@@ -8,12 +7,14 @@ class Sprite :
 {
 public:
 	Sprite();
-	Sprite(float x, float y);
-	Sprite(const char* path);
-	Sprite(const char* path, float x, float y);
-	Sprite(int srcH, int srcW, const char* path, float x, float y);
-	Sprite(int srcH, int srcW, const char* path);
-	Sprite(int srcH, int srcW, const char* path, bool fullScreen);
+	Sprite(const char* path, float x = 0.0f, float y = 0.0f);
+	Sprite(const char* path, Rekt* src, Rekt* dst);
+	Sprite(const char* path, Rekt* src, float x, float y);
+
+	Sprite(const char* sceneName, const char* path, float x = 0.0f, float y = 0.0f);
+	Sprite(const char* sceneName, const char* path, Rekt* src, Rekt* dst);
+	Sprite(const char* sceneName, const char* path, Rekt* src, float x, float y);
+
 	virtual ~Sprite();
 
 	void SetTexture(const char* path);
@@ -21,8 +22,8 @@ public:
 protected:
 	float x, y;
 	bool isVisible;
-	SDL_Rect* dstRect;
-	SDL_Rect* srcRect;
+	Rekt* dstRect;
+	Rekt* srcRect;
 	SDL_Texture* texture;
 	
 	virtual void Update();
