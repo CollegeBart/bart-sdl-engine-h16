@@ -18,7 +18,14 @@ TestEnvironment::TestEnvironment()
 	std::stringstream ss;
 	ss << std::setw(3) << std::setfill(' ') << 0;
 	test = new Font(ss.str().c_str(), textRect);
-	
+
+	// Music
+	music = Mix_LoadMUS("Music\\theme.wav");
+	if (music == NULL)
+	{
+		std::cout << Mix_GetError() << std::endl;
+	}
+	Mix_PlayMusic(music, 1);
 }
 
 TestEnvironment::~TestEnvironment()

@@ -23,6 +23,7 @@ private:
 	Sprite* sprite;
 	Sprite* testSprite;
 	Renaud* renaud;
+	Mix_Music* music;
 	BackGroundScroller* scrolling;
 	Font* test;
 	Collider* col;
