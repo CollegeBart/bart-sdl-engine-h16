@@ -21,6 +21,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_ttf.h"
+#include "SDL_mixer.h"
 // Box2D Lib
 #include "Box2D.h"
 
