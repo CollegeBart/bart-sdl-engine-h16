@@ -2,8 +2,15 @@
 
 
 
-Collider::Collider()
+Collider::Collider(float _posX, float _posY, float _width, float _heigth, b2BodyType _bodType, int _type)
+	: posX(_posX)
+	, posY(_posY)
+	, width(_width)
+	, heigth(_heigth)
+	, bodType (_bodType)
+	, type(_type)
 {
+	CreateCollider(_posX, _posY, _width, _heigth, _bodType, _type);
 }
 
 

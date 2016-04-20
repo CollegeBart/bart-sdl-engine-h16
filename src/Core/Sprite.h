@@ -15,7 +15,7 @@ public:
 	Sprite(int srcH, int srcW, const char* path);
 	Sprite(int srcH, int srcW, const char* path, bool fullScreen);
 	virtual ~Sprite();
-
+	
 	void SetTexture(const char* path);
 	float GetY() { return y; }
 	void SetX(float x) { this->x = x; }

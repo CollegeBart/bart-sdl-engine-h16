@@ -69,8 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\libs\SDL2_ttf\include;..\..\libs\Box2D;..\Core;..\..\libs\SDL2\include;..\..\libs\SDL2_image\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\libs\SDL2_ttf\lib\x64;..\..\libs\Box2D;..\..\libs\SDL2\lib\x64;..\..\libs\SDL2_image\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\libs\SDL2_mixer\include;..\..\libs\SDL2_ttf\include;..\..\libs\Box2D;..\Core;..\..\libs\SDL2\include;..\..\libs\SDL2_image\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\libs\SDL2_mixer\lib\x64;..\..\libs\SDL2_ttf\lib\x64;..\..\libs\Box2D;..\..\libs\SDL2\lib\x64;..\..\libs\SDL2_image\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -86,7 +86,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Box2D.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Box2D.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
