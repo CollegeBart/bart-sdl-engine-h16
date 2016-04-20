@@ -154,8 +154,27 @@ void Engine::Update()
 	{
 		(*iter)->Update();
 	}
+
 	timer->Tick();
 	physics->Step();
+
+	// Marc Dallaire - 2016/04/20
+	// Ajout de nouveaux components au runtime.
+	if (!Component::newComponents.empty())
+	{
+		std::vector<Component*>::iterator iter;
+
+		for (iter = Component::newComponents.begin();
+				iter != Component::newComponents.end();
+				iter++)
+		{
+			Component::components.push_back((*iter));
+		}
+
+		// Vider le tableau après leur ajout au tableau principal.
+		Component::newComponents.clear();
+	}
+
 }
 
 void Engine::Draw() 

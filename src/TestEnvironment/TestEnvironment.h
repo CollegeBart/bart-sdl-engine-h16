@@ -27,5 +27,12 @@ private:
 	BackGroundScroller* scrolling;
 	Font* test;
 	Collider* col;
+
+	// Marc Dallaire - 2016/04/20
+	// Test pour l'ajout de components au runtime.
+	SpriteAnimation* newSprite1;
+	SpriteAnimation* newSprite2;
+	bool newSpriteAdded = false;
+
 };
 
