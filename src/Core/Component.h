@@ -20,5 +20,9 @@ protected:
 private:
 	static std::vector<Component*> components;
 
+	// Marc Dallaire - 2016/04/20
+	// Tableau secondaire pour l'ajout de components au runtime.
+	static std::vector<Component*> newComponents;
+
 };
 

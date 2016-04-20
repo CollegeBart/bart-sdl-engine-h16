@@ -2,9 +2,15 @@
 
 std::vector<Component*> Component::components;
 
+// Marc Dallaire - 2016/04/20
+// Initialisation du tableau secondaire pour l'ajout de components au runtime.
+std::vector<Component*> Component::newComponents;
+
 Component::Component()
 {
-	components.push_back(this);
+	// Marc Dallaire - 2016/04/20
+	//	components.push_back(this);
+	newComponents.push_back(this);
 }
 
 Component::~Component()

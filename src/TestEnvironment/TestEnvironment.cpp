@@ -49,4 +49,14 @@ void TestEnvironment::Update()
 	std::stringstream ss;
 	ss << std::setw(3) << std::setfill(' ') << GTimer->GetTimeInSeconds();
 	test->SetText(ss.str().c_str());
+
+	// Marc Dallaire - 2016/04/20
+	// Test pour l'ajout de components au runtime.
+	if (!newSpriteAdded)
+	{
+		newSpriteAdded = true;
+		newSprite1 = new SpriteAnimation(100, 100, "Images\\course.png", 100.0f, 100.0f, 6);
+		newSprite2 = new SpriteAnimation(100, 100, "Images\\course.png", 200.0f, 200.0f, 6);
+	}
+
 }
