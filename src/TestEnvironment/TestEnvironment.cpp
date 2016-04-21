@@ -30,7 +30,12 @@ TestEnvironment::TestEnvironment()
 
 TestEnvironment::~TestEnvironment()
 {
+	//Font10 delete tous les news (à l'exception du textRect because bugs if done)
+	delete scrolling;
 	delete renaud;
+	delete testSprite;
+	delete col;
+	delete test;
 }
 
 void TestEnvironment::Update()
