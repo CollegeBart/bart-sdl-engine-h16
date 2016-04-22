@@ -17,10 +17,17 @@ public:
 
 	virtual ~Sprite();
 	
+	
+	void SetIsFullscreen(bool isFullscreen) { this->isFullScreen = isFullscreen; }
 	void SetTexture(const char* path);
+	
+	float GetX() { return x; }
 	float GetY() { return y; }
 	void SetX(float x) { this->x = x; }
 	void SetY(float y) { this->y = y; }
+
+	//Rekt* GetSrcRect() { return srcRect; }
+	
 
 protected:
 	Rekt* dstRect;
