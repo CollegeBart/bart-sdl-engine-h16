@@ -25,8 +25,8 @@ public:
 	float GetY() { return y; }
 	void SetX(float x) { this->x = x; }
 	void SetY(float y) { this->y = y; }
-
-	//Rekt* GetSrcRect() { return srcRect; }
+	Rekt* GetDstRect() { return dstRect; }
+	
 	
 
 protected:

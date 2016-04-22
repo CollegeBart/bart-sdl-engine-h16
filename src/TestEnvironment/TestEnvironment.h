@@ -4,7 +4,6 @@
 #include "Common.h"
 #include "Collider.h"
 #include "Renaud.h"
-#include "BackGroundScroller.h"
 #include "Font.h"
 #include <iomanip>
 #include "Game.h"
