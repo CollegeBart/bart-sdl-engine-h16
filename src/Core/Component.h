@@ -17,7 +17,5 @@ protected:
 	virtual void Update() = 0;
 	virtual void Draw();
 	virtual void Stop();
-
-	
 };
 

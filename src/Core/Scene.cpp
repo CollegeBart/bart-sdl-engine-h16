@@ -34,6 +34,23 @@ void Scene::Update()
 	{
 		(*iter)->Update();
 	}
+
+	// Marc Dallaire - 2016/04/20
+	// Ajout de nouveaux components au runtime.
+	if (!newComponents.empty())
+	{
+		std::vector<Component*>::iterator iter;
+
+		for (iter = newComponents.begin();
+		iter != newComponents.end();
+			iter++)
+		{
+			components.push_back((*iter));
+		}
+
+		// Vider le tableau après leur ajout au tableau principal.
+		newComponents.clear();
+	}
 }
 
 void Scene::Draw()

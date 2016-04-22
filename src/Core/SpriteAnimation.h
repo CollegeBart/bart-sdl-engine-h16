@@ -2,6 +2,7 @@
 
 #include "Sprite.h"
 
+
 class SpriteAnimation 
 	: public Sprite
 {
@@ -18,5 +19,10 @@ private:
 
 	void Update();
 	virtual void Draw();
+
+	void AnimateUpDown();
+
+
+	
 };
 

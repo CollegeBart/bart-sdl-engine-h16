@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -136,6 +137,22 @@ namespace EditorInterface
             {
                 DeleteImages(listBox1.SelectedItem.ToString());
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+        }
+
+        private void filesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Executable |*.exe";
+            openFileDialog1.Multiselect = false;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Process.Start(openFileDialog1.FileName);
             }
         }
     }

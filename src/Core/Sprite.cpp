@@ -57,7 +57,7 @@ Sprite::Sprite(const char * path, Rekt * src, Rekt * dst)
 }
 
 Sprite::Sprite(const char * path, Rekt * src, float x, float y)
-	: Component()
+	: Component(DEFAULT_SCENE_NAME)
 	, x(x), y(y)
 	, isVisible(true)
 	, texture(nullptr)
