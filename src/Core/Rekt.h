@@ -6,7 +6,7 @@ struct Rekt
 {
 	Rekt() 
 	{
-		std::cout << "Test" << std::endl;
+		std::cout << "New Rekt" << std::endl;
 		this->x = 0.f;
 		this->y = 0.f;
 		this->w = 0.f;
@@ -15,7 +15,7 @@ struct Rekt
 
 	Rekt(float x, float y, float w, float h)
 	{
-		std::cout << "Test" << std::endl;
+		std::cout << "New Rekt" << std::endl;
 		this->x = x;
 		this->y = y;
 		this->w = w;
@@ -24,7 +24,7 @@ struct Rekt
 
 	Rekt(SDL_Rect* rect)
 	{
-		std::cout << "Test" << std::endl;
+		std::cout << "New Rekt" << std::endl;
 		this->x = rect->x;
 		this->y = rect->y;
 		this->w = rect->w;
@@ -33,7 +33,7 @@ struct Rekt
 
 	~Rekt()
 	{
-		std::cout << "Deleted" << std::endl;
+		std::cout << "Delete Rekt" << std::endl;
 	}
 
 	class {

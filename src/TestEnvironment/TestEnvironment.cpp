@@ -34,6 +34,8 @@ TestEnvironment::~TestEnvironment()
 	delete testSprite;
 	delete col;
 	delete test;
+	delete newSprite1;
+	delete newSprite2;
 }
 
 void TestEnvironment::Update()
