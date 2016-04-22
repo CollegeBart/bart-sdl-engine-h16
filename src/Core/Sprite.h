@@ -23,12 +23,17 @@ public:
 	void SetY(float y) { this->y = y; }
 
 protected:
-	float x, y;
-	bool isVisible;
 	Rekt* dstRect;
 	Rekt* srcRect;
 	SDL_Texture* texture;
-	
+	float x, y;
+	bool isVisible;
+	// Byte allignment
+	bool spacer1;
+	bool spacer2;
+	bool spacer3;
+
+
 	virtual void Update();
 	virtual void Draw();
 	void SetTexture(SDL_Texture* tex);

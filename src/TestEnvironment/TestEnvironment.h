@@ -19,8 +19,6 @@ public:
 	void Update();
 
 private:
-	bool isDoneTen;
-	bool isDoneHundred;
 	Sprite* sprite;
 	Sprite* testSprite;
 	Renaud* renaud;
@@ -28,12 +26,15 @@ private:
 	//BackGroundScroller* scrolling;
 	Font* test;
 	Collider* col;
-
 	// Marc Dallaire - 2016/04/20
 	// Test pour l'ajout de components au runtime.
 	SpriteAnimation* newSprite1;
 	SpriteAnimation* newSprite2;
 	bool newSpriteAdded = false;
+	bool isDoneTen;
+	bool isDoneHundred;
+	// Byte allignment
+	bool spacer2;
 
 };
 
