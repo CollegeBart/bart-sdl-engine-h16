@@ -34,7 +34,7 @@ public:
 	SDL_Renderer* GetRenderer() { return renderer; }
 	Resources* GetResources() { return resources; }
 	Physics* GetPhysics() { return physics; }
-	std::string GetCurrentSceneName() { return currentScene; }
+	std::string GetCurrentSceneName() const { return currentScene; }
 
 	IScene* GetCurrentScene() { return GetScene(currentScene); }
 	IScene* GetScene(std::string sceneName) { return scenes[sceneName]; }
