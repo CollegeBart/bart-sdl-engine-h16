@@ -12,7 +12,7 @@ public:
 	
 	~Resources();
 
-	SDL_Texture* GetTexture(const char* path);
+	SDL_Texture* GetTexture (const char* path);
 
 private:
 	SDL_Renderer* renderer;

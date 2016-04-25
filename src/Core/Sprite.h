@@ -21,12 +21,12 @@ public:
 	void SetIsFullscreen(bool isFullscreen) { this->isFullScreen = isFullscreen; }
 	void SetTexture(const char* path);
 	
-	float GetX() { return x; }
-	float GetY() { return y; }
+	float GetX() const { return x; }
+	float GetY() const { return y; }
 	void SetX(float x) { this->x = x; }
 	void SetY(float y) { this->y = y; }
-	Rekt* GetDstRect() { return dstRect; }
-	Rekt* GetSrcRect() { return srcRect; }
+	Rekt* GetDstRect() const { return dstRect; }
+	Rekt* GetSrcRect() const { return srcRect; }
 
 	
 	
