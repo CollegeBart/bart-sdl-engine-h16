@@ -25,7 +25,7 @@ namespace EditorInterface
             Application.Exit();
         }
 
-        private void loadFoldersParser(OpenFileDialog openFileDialog1)
+        private bool loadFoldersParser(OpenFileDialog openFileDialog1)
         {
          
             openFileDialog1.Filter = "Projects |*.engine";
@@ -37,7 +37,10 @@ namespace EditorInterface
                 projectName = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
                 var d = new DirectoryInfo(Path.GetDirectoryName(openFileDialog1.FileName));
                 label1.Text = d.Name;
+                return true;
             }
+            else
+                return false;
         }
 
         private void LoadScene(string name)
@@ -55,8 +58,8 @@ namespace EditorInterface
         private void openProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshLstBox();
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            loadFoldersParser(openFileDialog1);
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();  
+           if (loadFoldersParser(openFileDialog1))
             LoadScene(Path.GetDirectoryName(openFileDialog1.FileName));
         }
 
@@ -130,7 +133,6 @@ namespace EditorInterface
             pictureBox1.Image = null;
         }
 
-
         private void listBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
@@ -144,9 +146,9 @@ namespace EditorInterface
         {
 
         }
+
         private void button1_Click(object sender, EventArgs e)
-        {
-            
+        {   
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Executable |*.exe";
             openFileDialog1.Multiselect = false;
