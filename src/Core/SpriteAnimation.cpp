@@ -9,6 +9,7 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, int numFrames
 	, numFrames(numFrames)
 	, currFrame(0)
 	, prevFrameTime(0)
+	, animSpeed(1000)
 {
 }
 
@@ -17,6 +18,7 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, float x, floa
 	, numFrames(numFrames)
 	, currFrame(0)
 	, prevFrameTime(0)
+	, animSpeed(1000)
 {
 }
 
@@ -32,7 +34,8 @@ void SpriteAnimation::Update()
 		srcRect->x = 0;
 		currFrame = 0;
 	}
-	if (GTimer->GetCurrTime() > (prevFrameTime + (1000/numFrames)))
+	
+	if (GTimer->GetCurrTime() > (prevFrameTime + (animSpeed/numFrames)))
 	{
 		srcRect->x += srcRect->w;
 		currFrame++;
