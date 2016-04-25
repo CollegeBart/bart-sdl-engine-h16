@@ -7,8 +7,8 @@ TestEnvironment::TestEnvironment()
 	// Sprites
 	//sprite = new Sprite("Images\\JeSuisRenaud.png");
 	renaud = new Renaud();
-	testSprite = new Sprite("Images\\course.png", 100, 300);
-	col = new Collider(10, 10, 20, 20, b2_dynamicBody, 0);
+	testSprite = new Sprite("Images\\course.png", 100.0f, 300.0f);
+	col = new Collider(10.f, 10.f, 20.f, 20.f, b2_dynamicBody, 0);
 	
 	// Fonts
 	std::stringstream ss;
