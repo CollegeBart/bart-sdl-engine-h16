@@ -49,6 +49,9 @@ namespace EditorInterface
             var d = new DirectoryInfo(name+@"\\Images");
             foreach (FileInfo fi in d.GetFiles())
                 listBox1.Items.Add(fi.Name);
+            var s = new DirectoryInfo(name + @"\\Scenes");
+            foreach (FileInfo fy in s.GetFiles())
+                listBox2.Items.Add(fy.Name);
         }
 
         private void RefreshLstBox()

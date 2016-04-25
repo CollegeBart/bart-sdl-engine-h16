@@ -42,6 +42,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1046, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1185, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +75,7 @@
             // openProjectToolStripMenuItem
             // 
             this.openProjectToolStripMenuItem.Name = "openProjectToolStripMenuItem";
-            this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.openProjectToolStripMenuItem.Text = "OpenProject...";
             this.openProjectToolStripMenuItem.Click += new System.EventHandler(this.openProjectToolStripMenuItem_Click);
             // 
@@ -81,20 +83,20 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Enabled = false;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.saveAsToolStripMenuItem.Text = "&Save as...";
             // 
             // quitToolStripMenuItem1
             // 
             this.quitToolStripMenuItem1.Name = "quitToolStripMenuItem1";
-            this.quitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.quitToolStripMenuItem1.Text = "&Quit";
             this.quitToolStripMenuItem1.Click += new System.EventHandler(this.quitToolStripMenuItem1_Click);
             // 
@@ -102,7 +104,7 @@
             // 
             this.addSpritesToolStripMenuItem.Enabled = false;
             this.addSpritesToolStripMenuItem.Name = "addSpritesToolStripMenuItem";
-            this.addSpritesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addSpritesToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.addSpritesToolStripMenuItem.Text = "&Add Sprites";
             this.addSpritesToolStripMenuItem.Click += new System.EventHandler(this.addSpritesToolStripMenuItem_Click);
             // 
@@ -123,7 +125,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 69);
+            this.label1.Location = new System.Drawing.Point(81, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 4;
@@ -131,7 +133,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(291, 139);
+            this.textBox1.Location = new System.Drawing.Point(237, 120);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -141,7 +143,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 186);
+            this.listBox1.Location = new System.Drawing.Point(12, 91);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(206, 82);
             this.listBox1.TabIndex = 6;
@@ -151,7 +153,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(26, 304);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 252);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 196);
             this.pictureBox1.TabIndex = 7;
@@ -168,11 +170,30 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(979, 138);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(179, 82);
+            this.listBox2.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1032, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Scene(s)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 537);
+            this.ClientSize = new System.Drawing.Size(1185, 537);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
@@ -205,6 +226,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
 
