@@ -29,12 +29,12 @@ public:
 	bool Init(const char* title, int width, int height);
 	int Run();
 
-	Timer* GetTimer() { return timer; }
-	Input* GetInput() { return input; }
-	SDL_Renderer* GetRenderer() { return renderer; }
-	Resources* GetResources() { return resources; }
-	Physics* GetPhysics() { return physics; }
-	std::string GetCurrentSceneName() { return currentScene; }
+	Timer* GetTimer() const { return timer; }
+	Input* GetInput() const { return input; }
+	SDL_Renderer* GetRenderer() const { return renderer; }
+	Resources* GetResources() const { return resources; }
+	Physics* GetPhysics() const { return physics; }
+	std::string GetCurrentSceneName() const { return currentScene; }
 
 	IScene* GetCurrentScene() { return GetScene(currentScene); }
 	IScene* GetScene(std::string sceneName) { return scenes[sceneName]; }

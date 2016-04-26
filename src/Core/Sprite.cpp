@@ -34,8 +34,8 @@ Sprite::Sprite(const char * path, float x, float y)
 			
 			SDL_QueryTexture(texture, 0, 0, w, h);
 
-			dstRect->w = *w;
-			dstRect->h = *h;
+			dstRect->w = (const float)*w;
+			dstRect->h = (const float)*h;
 
 			delete w;
 			delete h;
@@ -98,8 +98,8 @@ Sprite::Sprite(const char * sceneName, const char * path, float x, float y)
 
 			SDL_QueryTexture(texture, 0, 0, w, h);
 
-			dstRect->w = *w;
-			dstRect->h = *h;
+			dstRect->w = (const float)*w;
+			dstRect->h = (const float)*h;
 
 			delete w;
 			delete h;
@@ -158,8 +158,8 @@ void Sprite::SetTexture(SDL_Texture * tex)
 
 			SDL_QueryTexture(texture, 0, 0, w, h);
 
-			dstRect->w = *w;
-			dstRect->h = *h;
+			dstRect->w = (const float)*w;
+			dstRect->h = (const float)*h;
 
 			delete w;
 			delete h;

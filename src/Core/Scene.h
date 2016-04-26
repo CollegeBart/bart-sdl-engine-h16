@@ -13,7 +13,7 @@ public:
 
 	void AddComponent(Component* c)
 	{
-		components.push_back(c);
+		newComponents.push_back(c);
 	}
 
 protected:

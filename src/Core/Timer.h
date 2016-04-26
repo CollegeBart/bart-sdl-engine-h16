@@ -8,13 +8,13 @@ public:
 	Timer();
 	~Timer();
 
-	int GetStartTime() { return startTime; }
-	int GetCurrTime() { return currTime; }
-	int GetTime() { return (currTime - startTime); }
-	int GetTimeInSeconds() { return (currTime - startTime) / 1000; }
-	Uint64 GetFCurrTime() { return fCurrTime; }
-	Uint64 GetFPrevTime() { return fPrevTime; }
-	double GetDeltaTime() { return deltaTime; }
+	int64_t GetStartTime() const { return startTime; }
+	int64_t GetCurrTime() const { return currTime; }
+	int64_t GetTime() const { return (currTime - startTime); }
+	int64_t GetTimeInSeconds() const { return (currTime - startTime) / 1000; }
+	Uint64 GetFCurrTime() const { return fCurrTime; }
+	Uint64 GetFPrevTime() const { return fPrevTime; }
+	double GetDeltaTime() const { return deltaTime; }
 
 	void ResetTimer();
 	void StartTimer();

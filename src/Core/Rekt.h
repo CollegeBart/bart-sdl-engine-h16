@@ -25,10 +25,10 @@ struct Rekt
 	Rekt(SDL_Rect* rect)
 	{
 		std::cout << "New Rekt" << std::endl;
-		this->x = rect->x;
-		this->y = rect->y;
-		this->w = rect->w;
-		this->h = rect->h;
+		this->x = (const float)rect->x;
+		this->y = (const float)rect->y;
+		this->w = (const float)rect->w;
+		this->h = (const float)rect->h;
 	}
 
 	~Rekt()
@@ -72,10 +72,10 @@ struct Rekt
 	{
 		SDL_Rect r;
 
-		r.x = this->x;
-		r.y = this->y;
-		r.w = this->w;
-		r.h = this->h;
+		r.x = (int)this->x;
+		r.y = (int)this->y;
+		r.w = (int)this->w;
+		r.h = (int)this->h;
 
 		return r;
 	}
