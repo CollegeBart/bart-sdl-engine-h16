@@ -17,6 +17,7 @@ Sprite::Sprite(const char * path, float x, float y)
 	, texture(nullptr)
 	, dstRect(nullptr)
 	, srcRect(nullptr)
+	, isFullScreen(false)
 {
 	srcRect = new Rekt();
 	dstRect = new Rekt();
