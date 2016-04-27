@@ -11,6 +11,7 @@ public:
 	SpriteAnimation(const char * path, Rekt* srcRect, int numFrames);
 	SpriteAnimation(const char * path, Rekt* srcRect, float x, float y, int numFrames);
 	void SetAnimSpeed(int speed) { animSpeed = speed; }
+	void SetNumFrame(int frameNumber) { numFrames = frameNumber; }
 	~SpriteAnimation();
 
 	// Marc Dallaire - 2016/04/26
@@ -29,6 +30,7 @@ private:
 	virtual void Draw();
 
 	void AnimateUpDown();
+
 
 
 	
