@@ -32,11 +32,16 @@ void Scene::Update()
 		 iter != components.end();
 		 iter++)
 	{
+		// Marc Dallaire - 2016/04/26
+		// Ajout du Start() pour les nouveaux components créés au runtime. (Semble pas changer grand chose...)
+		if (!(*iter)->GetIsNew())
+		{
+			(*iter)->Start();
+		}
+
 		(*iter)->Update();
 	}
 
-	// Marc Dallaire - 2016/04/20
-	// Ajout de nouveaux components au runtime.
 	if (!newComponents.empty())
 	{
 		std::vector<Component*>::iterator iter;
