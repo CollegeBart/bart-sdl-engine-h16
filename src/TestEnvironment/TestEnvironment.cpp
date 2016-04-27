@@ -29,7 +29,7 @@ TestEnvironment::~TestEnvironment()
 	//Font10 delete tous les news (à l'exception du textRect because bugs if done)
 	//delete scrolling;
 	delete renaud;
-	delete testSprite;
+	//delete testSprite;
 	delete col;
 	delete test;
 	delete newSprite1;
@@ -67,6 +67,10 @@ void TestEnvironment::Update()
 	if (!newSpriteAdded)
 	{
 		newSpriteAdded = true;
+
+		//testSprite->Delete
+		//Game::Update();
+
 		newSprite1 = new SpriteAnimation("Images\\course.png", new Rekt(0.f,0.f,100.f,100.f), 100.0f, 100.0f, 6);
 		newSprite1->FlipH();
 

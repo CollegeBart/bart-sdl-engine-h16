@@ -16,6 +16,10 @@ public:
 		newComponents.push_back(c);
 	}
 
+
+	void DeleteComponent(Component* c);
+
+
 protected:
 	virtual void Start();
 	virtual void Update();

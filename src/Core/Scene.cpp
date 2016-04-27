@@ -79,3 +79,15 @@ void Scene::Stop()
 		(*iter)->Stop();
 	}
 }
+
+void Scene::DeleteComponent(Component* c)
+{
+	std::vector<Component*>::iterator iter = find(components.begin(), components.end(), c);
+	//int pos = distance(components.begin(), iter);
+
+	if (iter != components.end())
+	{
+		components.erase(iter);
+	}
+}
+

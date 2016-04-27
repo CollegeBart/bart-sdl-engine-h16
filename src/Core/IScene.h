@@ -9,6 +9,7 @@ class IScene
 
 public:
 	virtual void AddComponent(Component* component) = 0;
+	virtual void DeleteComponent(Component* component) = 0;
 
 protected:
 	virtual void Start() = 0;
