@@ -33,7 +33,3 @@ void Component::Stop()
 {
 }
 
-void Component::Delete()
-{
-	GEngine->GetCurrentScene()->DeleteComponent(this);
-}

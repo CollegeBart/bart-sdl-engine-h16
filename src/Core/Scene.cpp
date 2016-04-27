@@ -80,14 +80,17 @@ void Scene::Stop()
 	}
 }
 
+// Marc Dallaire - 2016/04/27
+// Ajout de la destruction d'un Component.
 void Scene::DeleteComponent(Component* c)
 {
 	std::vector<Component*>::iterator iter = find(components.begin(), components.end(), c);
-	//int pos = distance(components.begin(), iter);
 
 	if (iter != components.end())
 	{
+		delete (*iter);
 		components.erase(iter);
+		Update();
 	}
 }
 

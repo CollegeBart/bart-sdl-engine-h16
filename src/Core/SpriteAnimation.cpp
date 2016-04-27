@@ -29,6 +29,7 @@ SpriteAnimation::~SpriteAnimation()
 
 }
 
+
 void SpriteAnimation::Update()
 {
 	if (numFrames != 1)

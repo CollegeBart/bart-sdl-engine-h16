@@ -28,11 +28,14 @@ TestEnvironment::~TestEnvironment()
 {
 	//Font10 delete tous les news (à l'exception du textRect because bugs if done)
 	//delete scrolling;
-	delete renaud;
+
+	// Marc Dallaire - 2016/04/27
+	// Test pour la destruction de components au runtime.
+	//delete renaud;
 	//delete testSprite;
-	delete col;
+	//delete col;
 	delete test;
-	delete newSprite1;
+	//delete newSprite1;
 	delete newSprite2;
 }
 
@@ -64,14 +67,11 @@ void TestEnvironment::Update()
 
 	// Marc Dallaire - 2016/04/20
 	// Test pour l'ajout de components au runtime.
-	if (!newSpriteAdded)
+	if (!newSpriteAdded && GTimer->GetTimeInSeconds() == 5)
 	{
 		newSpriteAdded = true;
-
-		//testSprite->Delete
-		//Game::Update();
-
-		newSprite1 = new SpriteAnimation("Images\\course.png", new Rekt(0.f,0.f,100.f,100.f), 100.0f, 100.0f, 6);
+		
+		newSprite1 = new SpriteAnimation("Images\\course.png", new Rekt(0.f, 0.f, 100.f, 100.f), 100.0f, 100.0f, 6);
 		newSprite1->FlipH();
 
 		newSprite2 = new SpriteAnimation("Images\\course.png", new Rekt(0.f, 0.f, 100.f, 100.f), 200.0f, 200.0f, 6);
@@ -85,6 +85,21 @@ void TestEnvironment::Update()
 		newSprite2->SetNumFrame(6);
 
 		//SpriteAnimation(const char * path, Rekt* srcRect, float x, float y, int numFrames);
+
 	}
+
+	// Marc Dallaire - 2016/04/27
+	// Test pour la destruction de components au runtime.
+	if (GTimer->GetTimeInSeconds() == 10)
+	{
+		GEngine->GetCurrentScene()->DeleteComponent(renaud);
+		GEngine->GetCurrentScene()->DeleteComponent(testSprite);
+		GEngine->GetCurrentScene()->DeleteComponent(col);
+		//GEngine->GetCurrentScene()->DeleteComponent(test);
+		GEngine->GetCurrentScene()->DeleteComponent(newSprite1);
+		//GEngine->GetCurrentScene()->DeleteComponent(newSprite2);
+		Game::Update();
+	}
+
 
 }
