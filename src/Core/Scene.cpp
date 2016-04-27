@@ -2,12 +2,20 @@
 
 Scene::Scene()
 {
-	Engine::GetInstance()->AddScene(DEFAULT_SCENE_NAME, this);
+	GEngine->AddScene(DEFAULT_SCENE_NAME, this);
+
+	// Initialize physics.
+	GPhysics->SetContactListener(
+		new Collider::CollisionListener());
 }
 
 Scene::Scene(const char* sceneName)
 {
-	Engine::GetInstance()->AddScene(sceneName, this);
+	GEngine->AddScene(sceneName, this);
+
+	// Initialize physics.
+	GPhysics->SetContactListener(
+		new Collider::CollisionListener());
 }
 
 Scene::~Scene()

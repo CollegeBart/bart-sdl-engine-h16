@@ -7,7 +7,6 @@
 
 class Engine
 {
-
 #pragma region SINGLETON
 public:
 	static Engine* GetInstance()
@@ -51,7 +50,6 @@ public:
 		}
 		else
 			currentScene = sceneName;
-		
 	}
 
 private:

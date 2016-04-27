@@ -8,21 +8,23 @@ public:
 	Physics();
 	~Physics();
 
-	//Step is the physics "update"
-	void Step();
-	//Physics use a "world" object responsible for body creation
-	b2World GetWorld() { return world; }
-	//Fonction to create a "body" object
-	b2Body* CreateBody(int posX, int posY, b2BodyType bodyType);
-	//Destroy a body object
-	void DestroyBody(b2Body* body);
-private:
-	b2Vec2 gravity;
-	b2ContactListener* listener;
-	b2World world;
-	float32 timeStep;
-	int32 velocityIterations;
-	int32 positionIterations;
-	std::vector<b2Body*> bodies;
-};
+	void SetContactListener(b2ContactListener* listener) {
+		world.SetContactListener(listener);
+	}
 
+	void Step(float step = 1.0f / 60.0f, int vit = 6, int pit = 2)
+	{
+		world.Step(step, vit, pit);
+		world.Step(step, vit, pit);
+		world.Step(step, vit, pit);
+		world.Step(step, vit, pit);
+		world.ClearForces();
+	}
+
+	b2Body* CreateBody(int x, int y, b2BodyType type);
+	void DestroyBody(b2Body* body);
+
+private:
+	std::vector<b2Body*> bodies;
+	b2World world;
+};

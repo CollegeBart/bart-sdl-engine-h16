@@ -7,6 +7,8 @@
 #include "Font.h"
 #include <iomanip>
 #include "Game.h"
+#include "Ball.h"
+#include "Platform.h"
 
 class TestEnvironment :
 	public Game
@@ -18,6 +20,8 @@ public:
 	void Update();
 
 private:
+	Platform* platform;
+	Ball* ball;
 	Sprite* sprite;
 	Sprite* testSprite;
 	Renaud* renaud;

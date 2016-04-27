@@ -6,7 +6,7 @@
 
 int main(int argc, char* args[])
 {
-	GEngine->Init("TestEnvironment", 400, 300);
+	GEngine->Init("TestEnvironment", 1280, 720);
 
 	TestEnvironment* env = new TestEnvironment();
 

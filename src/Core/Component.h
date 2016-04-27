@@ -1,9 +1,11 @@
 #pragma once
 
-//#include "Common.h"
+#include "Common.h"
+#include "Collider.h"
 #include "Engine.h"
 
 class Component
+	: public Collider
 {
 public:
 	friend class Scene;

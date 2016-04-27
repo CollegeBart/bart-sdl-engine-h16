@@ -23,6 +23,7 @@ void Component::Start()
 
 void Component::Update()
 {
+	Collider::Update(GTimer->GetDeltaTime());
 }
 
 void Component::Draw()

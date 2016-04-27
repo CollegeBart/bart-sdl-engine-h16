@@ -22,12 +22,15 @@
 #include "SDL_image.h"
 #include "SDL_ttf.h"
 #include "SDL_mixer.h"
+
 // Box2D Lib
 #include "Box2D.h"
 
+// GLM include
+#include "glm.hpp"
+
 // Custom includes
 #include "Rekt.h"
-#include "Vector2.h"
 #include "Input.h"
 #include "Resources.h"
 #include "Timer.h"

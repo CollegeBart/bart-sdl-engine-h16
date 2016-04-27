@@ -34,7 +34,6 @@ public:
 	
 
 protected:
-	Rekt* dstRect;
 	Rekt* srcRect;
 	SDL_Texture* texture;
 	float x, y;

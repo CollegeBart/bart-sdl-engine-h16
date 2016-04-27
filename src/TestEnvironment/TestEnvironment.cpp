@@ -8,7 +8,9 @@ TestEnvironment::TestEnvironment()
 	//sprite = new Sprite("Images\\JeSuisRenaud.png");
 	renaud = new Renaud();
 	testSprite = new Sprite("Images\\course.png", 100.0f, 300.0f);
-	col = new Collider(10.f, 10.f, 20.f, 20.f, b2_dynamicBody, 0);
+	
+	ball = new Ball();
+	platform = new Platform();
 	
 	// Fonts
 	std::stringstream ss;
@@ -28,6 +30,8 @@ TestEnvironment::~TestEnvironment()
 {
 	//Font10 delete tous les news (à l'exception du textRect because bugs if done)
 	//delete scrolling;
+	delete ball;
+	delete platform;
 	delete renaud;
 	delete testSprite;
 	delete col;

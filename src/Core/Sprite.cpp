@@ -5,7 +5,6 @@ Sprite::Sprite()
 	, x(0.f), y(0.f)
 	, isVisible(false)
 	, texture(nullptr)
-	, dstRect(nullptr)
 	, srcRect(nullptr)
 	, isFlippedH(false)
 {
@@ -16,13 +15,11 @@ Sprite::Sprite(const char * path, float x, float y)
 	, x(x), y(y)
 	, isVisible(true)
 	, texture(nullptr)
-	, dstRect(nullptr)
 	, srcRect(nullptr)
 	, isFullScreen(false)
 	, isFlippedH(false)
 {
 	srcRect = new Rekt();
-	dstRect = new Rekt();
 	dstRect->x = x;
 	dstRect->y = y;
 
@@ -51,9 +48,10 @@ Sprite::Sprite(const char * path, Rekt * src, Rekt * dst)
 	, isVisible(true)
 	, texture(nullptr)
 	, srcRect(src)
-	, dstRect(dst)
 	, isFlippedH(false)
 {
+	dstRect = dst;
+
 	if (path != nullptr)
 	{
 		SetTexture(path);
@@ -66,10 +64,8 @@ Sprite::Sprite(const char * path, Rekt * src, float x, float y)
 	, isVisible(true)
 	, texture(nullptr)
 	, srcRect(src)
-	, dstRect(nullptr)
 	, isFlippedH(false)
 {
-	dstRect = new Rekt();
 	dstRect->x;
 	dstRect->y;
 
@@ -85,10 +81,8 @@ Sprite::Sprite(const char * sceneName, const char * path, float x, float y)
 	, isVisible(true)
 	, texture(nullptr)
 	, srcRect(nullptr)
-	, dstRect(nullptr)
 	, isFlippedH(false)
 {
-	dstRect = new Rekt();
 	srcRect = new Rekt();
 	dstRect->x = x;
 	dstRect->y = y;
@@ -118,9 +112,10 @@ Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, Rekt * dst
 	, isVisible(true)
 	, texture(nullptr)
 	, srcRect(src)
-	, dstRect(dst)
 	, isFlippedH(false)
 {
+	dstRect = dst;
+
 	if (path != nullptr)
 	{
 		SetTexture(path);
@@ -133,10 +128,8 @@ Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, float x, f
 	, isVisible(true)
 	, texture(nullptr)
 	, srcRect(src)
-	, dstRect(nullptr)
 	, isFlippedH(false)
 {
-	dstRect = new Rekt();
 	dstRect->x;
 	dstRect->y;
 
@@ -186,6 +179,7 @@ void Sprite::SetTexture(const char * path)
 
 void Sprite::Update()
 {
+	Component::Update();
 }
 
 void Sprite::Draw()
@@ -196,8 +190,8 @@ void Sprite::Draw()
 	{
 		if (texture)
 		{
-			dstRect->x = x;
-			dstRect->y = y;
+			//dstRect->x = x;
+			//dstRect->y = y;
 
 			// Marc Dallaire - 2016/04/26
 			// Ajout d'une fonction pour virer les sprites horizontalement.

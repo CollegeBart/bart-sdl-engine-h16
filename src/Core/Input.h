@@ -18,8 +18,8 @@ public:
 	bool IsMouseButtonPressed(int button);
 	bool IsMouseButtonReleased(int button);
 
-	Vector2<int> GetMousePosition() { return mousePosition; }
-	
+	glm::vec2 GetMousePosition() { return mousePosition; }
+
 private:
 	static const int KEY_COUNT = 256;
 	static const int MOUSE_BUTTON_COUNT = 5;
@@ -30,7 +30,7 @@ private:
 	bool mouseButtons[MOUSE_BUTTON_COUNT];
 	bool lastMouseButtons[MOUSE_BUTTON_COUNT];
 
-	Vector2<int> mousePosition;
+	glm::vec2 mousePosition;
 
 	bool ProcessKey(const SDL_Scancode& key, bool isReleased);
 };
