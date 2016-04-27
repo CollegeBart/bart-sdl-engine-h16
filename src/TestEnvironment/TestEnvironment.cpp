@@ -71,8 +71,15 @@ void TestEnvironment::Update()
 		newSprite1->FlipH();
 
 		newSprite2 = new SpriteAnimation("Images\\course.png", new Rekt(0.f, 0.f, 100.f, 100.f), 200.0f, 200.0f, 6);
-		//Font10 --> SetAnimSpeed, init at 1000, less is faster.
-		newSprite2->SetAnimSpeed(1000);
+		//Font10 --> SetAnimSpeed - 2016/04/25
+		//init at 1000, less is faster.
+		newSprite2->SetAnimSpeed(500);
+
+		//Font10 --> SetNumFrame - 2016/04/27
+		// variable déjà dans le constructeur, mais ajustable via le setter ci-dessous
+		// à SetNumFrame(1), l'anim ne jouera que la première frame (idle)
+		newSprite2->SetNumFrame(6);
+
 		//SpriteAnimation(const char * path, Rekt* srcRect, float x, float y, int numFrames);
 	}
 
