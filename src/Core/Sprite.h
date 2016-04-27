@@ -17,7 +17,6 @@ public:
 
 	virtual ~Sprite();
 	
-	
 	void SetIsFullscreen(bool isFullscreen) { this->isFullScreen = isFullscreen; }
 	void SetTexture(const char* path);
 	

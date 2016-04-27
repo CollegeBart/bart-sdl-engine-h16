@@ -10,8 +10,14 @@ public:
 	SpriteAnimation();
 	SpriteAnimation(const char * path, Rekt* srcRect, int numFrames);
 	SpriteAnimation(const char * path, Rekt* srcRect, float x, float y, int numFrames);
-	void SetAnimSpeed(int speed) { animSpeed = speed; }
 	~SpriteAnimation();
+
+
+	void SetAnimSpeed(int speed) { animSpeed = speed; }
+	void SetNumFrame(int frameNumber) { numFrames = frameNumber; }
+	int GetNumFrame() { return numFrames; }
+
+
 
 	// Marc Dallaire - 2016/04/26
 	// Ajout d'une fonction pour virer les sprites horizontalement.
@@ -29,6 +35,7 @@ private:
 	virtual void Draw();
 
 	void AnimateUpDown();
+
 
 
 	

@@ -29,19 +29,28 @@ SpriteAnimation::~SpriteAnimation()
 
 }
 
+
 void SpriteAnimation::Update()
 {
-	if (currFrame >= numFrames)
+	if (numFrames != 1)
+	{
+		if (currFrame >= numFrames)
+		{
+			srcRect->x = 0;
+			currFrame = 0;
+		}
+		
+		if (GTimer->GetCurrTime() > (prevFrameTime + (animSpeed/numFrames)))
+		{
+			srcRect->x += srcRect->w;
+			currFrame++;
+			prevFrameTime = (int)GTimer->GetCurrTime();
+		}
+	}
+	else
 	{
 		srcRect->x = 0;
 		currFrame = 0;
-	}
-	
-	if (GTimer->GetCurrTime() > (prevFrameTime + (animSpeed/numFrames)))
-	{
-		srcRect->x += srcRect->w;
-		currFrame++;
-		prevFrameTime = (int)GTimer->GetCurrTime();
 	}
 }
 
@@ -73,3 +82,6 @@ void SpriteAnimation::AnimateUpDown()
 {
 
 }
+
+
+
