@@ -28,7 +28,9 @@ public:
 	Rekt* GetDstRect() const { return dstRect; }
 	Rekt* GetSrcRect() const { return srcRect; }
 
-	
+	// Marc Dallaire - 2016/04/26
+	// Ajout d'une fonction pour virer les sprites horizontalement.
+	void FlipH() { isFlippedH = !isFlippedH; }
 	
 
 protected:
@@ -49,5 +51,6 @@ protected:
 
 private:
 	bool isFullScreen;
+	bool isFlippedH;
 };
 

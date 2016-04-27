@@ -10,6 +10,7 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, int numFrames
 	, currFrame(0.0f)
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
+	, isFlippedH(false)
 {
 }
 
@@ -19,6 +20,7 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, float x, floa
 	, currFrame(0.0f)
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
+	, isFlippedH(false)
 {
 }
 
@@ -45,6 +47,8 @@ void SpriteAnimation::Update()
 
 void SpriteAnimation::Draw()
 {
+	SDL_RendererFlip flipFlag;
+
 	if (isVisible)
 	{
 		if (texture)
@@ -52,7 +56,15 @@ void SpriteAnimation::Draw()
 			dstRect->x = x;
 			dstRect->y = y;
 
-			SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect());
+			// Marc Dallaire - 2016/04/26
+			// Ajout d'une fonction pour virer les sprites horizontalement.
+			if (isFlippedH)
+				flipFlag = SDL_FLIP_HORIZONTAL;
+			else
+				flipFlag = SDL_FLIP_NONE;
+
+			//SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect());
+			SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect(), NULL, NULL, flipFlag);
 		}
 	}
 }

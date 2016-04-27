@@ -7,6 +7,7 @@ Sprite::Sprite()
 	, texture(nullptr)
 	, dstRect(nullptr)
 	, srcRect(nullptr)
+	, isFlippedH(false)
 {
 }
 
@@ -18,6 +19,7 @@ Sprite::Sprite(const char * path, float x, float y)
 	, dstRect(nullptr)
 	, srcRect(nullptr)
 	, isFullScreen(false)
+	, isFlippedH(false)
 {
 	srcRect = new Rekt();
 	dstRect = new Rekt();
@@ -50,7 +52,8 @@ Sprite::Sprite(const char * path, Rekt * src, Rekt * dst)
 	, texture(nullptr)
 	, srcRect(src)
 	, dstRect(dst)
-{	
+	, isFlippedH(false)
+{
 	if (path != nullptr)
 	{
 		SetTexture(path);
@@ -64,6 +67,7 @@ Sprite::Sprite(const char * path, Rekt * src, float x, float y)
 	, texture(nullptr)
 	, srcRect(src)
 	, dstRect(nullptr)
+	, isFlippedH(false)
 {
 	dstRect = new Rekt();
 	dstRect->x;
@@ -82,6 +86,7 @@ Sprite::Sprite(const char * sceneName, const char * path, float x, float y)
 	, texture(nullptr)
 	, srcRect(nullptr)
 	, dstRect(nullptr)
+	, isFlippedH(false)
 {
 	dstRect = new Rekt();
 	srcRect = new Rekt();
@@ -114,6 +119,7 @@ Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, Rekt * dst
 	, texture(nullptr)
 	, srcRect(src)
 	, dstRect(dst)
+	, isFlippedH(false)
 {
 	if (path != nullptr)
 	{
@@ -128,6 +134,7 @@ Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, float x, f
 	, texture(nullptr)
 	, srcRect(src)
 	, dstRect(nullptr)
+	, isFlippedH(false)
 {
 	dstRect = new Rekt();
 	dstRect->x;
@@ -183,6 +190,8 @@ void Sprite::Update()
 
 void Sprite::Draw()
 {
+	SDL_RendererFlip flipFlag;
+
 	if (isVisible)
 	{
 		if (texture)
@@ -190,19 +199,29 @@ void Sprite::Draw()
 			dstRect->x = x;
 			dstRect->y = y;
 
+			// Marc Dallaire - 2016/04/26
+			// Ajout d'une fonction pour virer les sprites horizontalement.
+			if (isFlippedH)
+				flipFlag = SDL_FLIP_HORIZONTAL;
+			else
+				flipFlag = SDL_FLIP_NONE;
+
 			if (!isFullScreen)
 			{
 				if (srcRect->w == 0 || srcRect->h == 0)
 				{
-					SDL_RenderCopy(GRenderer, texture, nullptr, &dstRect->GetRect());
+					//SDL_RenderCopy(GRenderer, texture, nullptr, &dstRect->GetRect());
+					SDL_RenderCopyEx(GRenderer, texture, nullptr, &dstRect->GetRect(), NULL, NULL, flipFlag);
 				}
 				else
 				{
-					SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect());
+					//SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect());
+					SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect(), NULL, NULL, flipFlag);
 				}
 			}
 			else
-				SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), 0);
+				//SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), 0);
+				SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), 0, NULL, NULL, flipFlag);
 		}
 	}
 }

@@ -68,6 +68,8 @@ void TestEnvironment::Update()
 	{
 		newSpriteAdded = true;
 		newSprite1 = new SpriteAnimation("Images\\course.png", new Rekt(0.f,0.f,100.f,100.f), 100.0f, 100.0f, 6);
+		newSprite1->FlipH();
+
 		newSprite2 = new SpriteAnimation("Images\\course.png", new Rekt(0.f, 0.f, 100.f, 100.f), 200.0f, 200.0f, 6);
 		//Font10 --> SetAnimSpeed, init at 1000, less is faster.
 		newSprite2->SetAnimSpeed(1000);

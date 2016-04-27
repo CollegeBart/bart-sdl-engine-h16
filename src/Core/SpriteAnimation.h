@@ -13,11 +13,17 @@ public:
 	void SetAnimSpeed(int speed) { animSpeed = speed; }
 	~SpriteAnimation();
 
+	// Marc Dallaire - 2016/04/26
+	// Ajout d'une fonction pour virer les sprites horizontalement.
+	void FlipH() { isFlippedH = !isFlippedH; }
+
 private:
 	int numFrames;
 	int currFrame;
 	int prevFrameTime;
 	int animSpeed;
+
+	bool isFlippedH;
 
 	void Update();
 	virtual void Draw();
