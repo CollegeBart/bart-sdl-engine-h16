@@ -46,6 +46,11 @@ void SpriteAnimation::Update()
 			prevFrameTime = (int)GTimer->GetCurrTime();
 		}
 	}
+	else
+	{
+		srcRect->x = 0;
+		currFrame = 0;
+	}
 }
 
 void SpriteAnimation::Draw()
