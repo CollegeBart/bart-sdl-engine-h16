@@ -190,8 +190,11 @@ void Sprite::Draw()
 	{
 		if (texture)
 		{
-			//dstRect->x = x;
-			//dstRect->y = y;
+			if (GetBody() == nullptr)
+			{
+				dstRect->x = x;
+				dstRect->y = y;
+			}
 
 			// Marc Dallaire - 2016/04/26
 			// Ajout d'une fonction pour virer les sprites horizontalement.
@@ -204,18 +207,15 @@ void Sprite::Draw()
 			{
 				if (srcRect->w == 0 || srcRect->h == 0)
 				{
-					//SDL_RenderCopy(GRenderer, texture, nullptr, &dstRect->GetRect());
 					SDL_RenderCopyEx(GRenderer, texture, nullptr, &dstRect->GetRect(), NULL, NULL, flipFlag);
 				}
 				else
 				{
-					//SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect());
 					SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect(), NULL, NULL, flipFlag);
 				}
 			}
 			else
-				//SDL_RenderCopy(GRenderer, texture, &srcRect->GetRect(), 0);
-				SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), 0, NULL, NULL, flipFlag);
+				SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect(), NULL, NULL, flipFlag);
 		}
 	}
 }
