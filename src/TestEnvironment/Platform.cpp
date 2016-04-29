@@ -4,7 +4,7 @@ Platform::Platform()
 	: Sprite("Images/Platform.png", 20, 500)
 {
 	b2Filter filter;
-	filter.categoryBits = Platform::PLATFORM1_CATEGORY;
+	filter.categoryBits = Platform::PLATFORM2_CATEGORY;
 
 	CreateCollider(Collider::SQUARE_COLLIDER, 0.0f);
 	GetBody()->GetFixtureList()[0].SetFilterData(filter);
