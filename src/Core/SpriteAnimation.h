@@ -31,13 +31,13 @@ private:
 
 	bool isFlippedH;
 
-	void Update();
 	virtual void Draw();
 
 	void AnimateUpDown();
 
+protected:
 
-
+	void Update();
 	
 };
 
