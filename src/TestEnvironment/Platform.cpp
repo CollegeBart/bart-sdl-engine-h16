@@ -4,7 +4,7 @@ Platform::Platform()
 	: Sprite("Images/Platform.png", 20, 500)
 {
 	b2Filter filter;
-	filter.categoryBits = Platform::PLATFORM1_CATEGORY;
+	filter.categoryBits = PLATFORM_CATEGORY;
 
 	CreateCollider(Collider::SQUARE_COLLIDER, 0.0f);
 	GetBody()->GetFixtureList()[0].SetFilterData(filter);
@@ -22,12 +22,12 @@ void Platform::OnCollisionEnter(b2Fixture * fixture)
 	{
 		switch (fixture->GetFilterData().categoryBits)
 		{
-		case Ball::BALL1_CATEGORY: {
-			std::cout << "BALL1_CATEGORY" << std::endl;
+		case BALL_CATEGORY: {
+			std::cout << "BALL_CATEGORY" << std::endl;
 		} break;
 
-		case Ball::BALL2_CATEGORY: {
-			std::cout << "BALL2_CATEGORY" << std::endl;
+		case PLATFORM_CATEGORY: {
+			std::cout << "PLATFORM_CATEGORY" << std::endl;
 		} break;
 
 		default:
