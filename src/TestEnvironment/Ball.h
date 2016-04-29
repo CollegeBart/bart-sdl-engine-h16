@@ -1,18 +1,12 @@
 #pragma once
 
 #include "Sprite.h"
-#include "Platform.h"
+#include "CollisionCategory.h"
 
 class Ball
 	: public Sprite
 {
 public:
-	enum BallCategories
-	{
-		BALL1_CATEGORY = 0x0001,
-		BALL2_CATEGORY = 0x0002
-	};
-
 	Ball();
 	~Ball();
 

@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="CollisionCategory.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Renaud.h" />
     <ClInclude Include="TestEnvironment.h" />
