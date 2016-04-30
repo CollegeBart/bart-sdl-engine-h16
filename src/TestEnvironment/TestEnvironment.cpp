@@ -91,7 +91,7 @@ void TestEnvironment::Update()
 	{
 		GEngine->GetCurrentScene()->DeleteComponent(renaud);
 		GEngine->GetCurrentScene()->DeleteComponent(testSprite);
-		//GEngine->GetCurrentScene()->DeleteComponent(test);
+		//GEngine->GetCurrentScene()->DeleteComponent(test);s
 		GEngine->GetCurrentScene()->DeleteComponent(newSprite1);
 		//GEngine->GetCurrentScene()->DeleteComponent(newSprite2);
 		Game::Update();
