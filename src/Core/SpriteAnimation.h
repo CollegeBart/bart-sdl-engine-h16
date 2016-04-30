@@ -31,12 +31,12 @@ private:
 
 	bool isFlippedH;
 
-	
 	virtual void Draw();
 
 	void AnimateUpDown();
 
 protected:
+
 	void Update();
 	
 };
