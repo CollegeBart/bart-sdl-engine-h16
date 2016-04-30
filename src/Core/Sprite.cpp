@@ -215,7 +215,7 @@ void Sprite::Draw()
 				}
 			}
 			else
-				SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), &dstRect->GetRect(), NULL, NULL, flipFlag);
+				SDL_RenderCopyEx(GRenderer, texture, &srcRect->GetRect(), 0, NULL, NULL, flipFlag);
 		}
 	}
 }
