@@ -24,6 +24,16 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, float x, floa
 {
 }
 
+SpriteAnimation::SpriteAnimation(const char * sceneName, const char * path, Rekt * srcRect, float x, float y, int numFrames)
+	: Sprite(sceneName, path, srcRect, x, y)
+	, numFrames(numFrames)
+	, currFrame(0.0f)
+	, prevFrameTime(0.0f)
+	, animSpeed(1000)
+	, isFlippedH(false)
+{
+}
+
 SpriteAnimation::~SpriteAnimation()
 {
 
@@ -69,6 +79,8 @@ void SpriteAnimation::Draw()
 			// Ajout d'une fonction pour virer les sprites horizontalement.
 			if (isFlippedH)
 				flipFlag = SDL_FLIP_HORIZONTAL;
+			else if (isFlippedV)
+				flipFlag = SDL_FLIP_VERTICAL;
 			else
 				flipFlag = SDL_FLIP_NONE;
 

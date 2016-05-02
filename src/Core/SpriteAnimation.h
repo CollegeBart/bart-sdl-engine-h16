@@ -10,6 +10,7 @@ public:
 	SpriteAnimation();
 	SpriteAnimation(const char * path, Rekt* srcRect, int numFrames);
 	SpriteAnimation(const char * path, Rekt* srcRect, float x, float y, int numFrames);
+	SpriteAnimation(const char * sceneName, const char * path, Rekt* srcRect, float x, float y, int numFrames);
 	~SpriteAnimation();
 
 
@@ -22,6 +23,7 @@ public:
 	// Marc Dallaire - 2016/04/26
 	// Ajout d'une fonction pour virer les sprites horizontalement.
 	void FlipH() { isFlippedH = !isFlippedH; }
+	void FlipV() { isFlippedV = !isFlippedV; }
 
 private:
 	int numFrames;
@@ -30,6 +32,7 @@ private:
 	int animSpeed;
 
 	bool isFlippedH;
+	bool isFlippedV;
 
 	virtual void Draw();
 
