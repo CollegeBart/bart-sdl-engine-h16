@@ -24,6 +24,16 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, float x, floa
 {
 }
 
+SpriteAnimation::SpriteAnimation(const char * sceneName, const char * path, Rekt * srcRect, float x, float y, int numFrames)
+	: Sprite(sceneName, path, srcRect, x, y)
+	, numFrames(numFrames)
+	, currFrame(0.0f)
+	, prevFrameTime(0.0f)
+	, animSpeed(1000)
+	, isFlippedH(false)
+{
+}
+
 SpriteAnimation::~SpriteAnimation()
 {
 

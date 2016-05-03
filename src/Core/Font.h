@@ -10,6 +10,7 @@ public:
 	Font();
 	Font(const char* text);
 	Font(const char* text, float x, float y);
+	Font(const char* sceneName, const char* text);
 	~Font();
 	SDL_Surface* GetSurfaceMessage() { return surfaceMessage; }
 

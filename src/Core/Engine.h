@@ -49,7 +49,12 @@ public:
 			std::cout << "Error! Scene name \"" << sceneName << "\" does not exist." << std::endl;
 		}
 		else
+		{
+			Stop();
 			currentScene = sceneName;
+			Start();
+		}
+			
 	}
 
 private:

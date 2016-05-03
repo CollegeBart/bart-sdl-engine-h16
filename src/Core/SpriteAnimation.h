@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Sprite.h"
 
 
@@ -10,8 +9,8 @@ public:
 	SpriteAnimation();
 	SpriteAnimation(const char * path, Rekt* srcRect, int numFrames);
 	SpriteAnimation(const char * path, Rekt* srcRect, float x, float y, int numFrames);
+	SpriteAnimation(const char* sceneName, const char * path,  Rekt* srcRect, float x, float y, int numFrames);
 	~SpriteAnimation();
-
 
 	void SetAnimSpeed(int speed) { animSpeed = speed; }
 	void SetNumFrame(int frameNumber) { numFrames = frameNumber; }

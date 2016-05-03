@@ -11,6 +11,7 @@ public:
 	Sprite(const char* path, Rekt* src, Rekt* dst);
 	Sprite(const char* path, Rekt* src, float x, float y);
 
+	Sprite(const char* sceneName, int buffer);
 	Sprite(const char* sceneName, const char* path, float x = 0.0f, float y = 0.0f);
 	Sprite(const char* sceneName, const char* path, Rekt* src, Rekt* dst);
 	Sprite(const char* sceneName, const char* path, Rekt* src, float x, float y);

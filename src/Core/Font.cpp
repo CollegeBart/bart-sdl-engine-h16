@@ -30,6 +30,17 @@ Font::Font(const char* text, float x, float y)
 	SetText(text);
 }
 
+Font::Font(const char * sceneName, const char * text)
+	: Sprite(sceneName, 1)
+	, font(nullptr)
+{
+	font = TTF_OpenFont("Fonts\\PressStart2P.ttf", 24);
+	white = { 255, 255, 255 };
+
+	
+	SetText(text);
+}
+
 Font::~Font()
 {
 	TTF_CloseFont(font);

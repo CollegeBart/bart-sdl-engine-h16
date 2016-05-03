@@ -75,6 +75,19 @@ Sprite::Sprite(const char * path, Rekt * src, float x, float y)
 	}
 }
 
+Sprite::Sprite(const char * sceneName, int buffer)
+	: Component(DEFAULT_SCENE_NAME)
+	, x(0.f), y(0.f)
+	, isVisible(false)
+	, texture(nullptr)
+	, srcRect(nullptr)
+	, isFlippedH(false)
+{
+	srcRect = new Rekt();
+	dstRect->x = 250;
+	dstRect->y = 300;
+}
+
 Sprite::Sprite(const char * sceneName, const char * path, float x, float y)
 	: Component(sceneName)
 	, x(x), y(y)
