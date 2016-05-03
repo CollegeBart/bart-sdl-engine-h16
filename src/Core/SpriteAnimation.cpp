@@ -11,6 +11,7 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, int numFrames
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
@@ -21,6 +22,7 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, float x, floa
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
@@ -31,6 +33,7 @@ SpriteAnimation::SpriteAnimation(const char * sceneName, const char * path, Rekt
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
