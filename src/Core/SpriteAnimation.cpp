@@ -79,6 +79,8 @@ void SpriteAnimation::Draw()
 			// Ajout d'une fonction pour virer les sprites horizontalement.
 			if (isFlippedH)
 				flipFlag = SDL_FLIP_HORIZONTAL;
+			else if (isFlippedV)
+				flipFlag = SDL_FLIP_VERTICAL;
 			else
 				flipFlag = SDL_FLIP_NONE;
 
