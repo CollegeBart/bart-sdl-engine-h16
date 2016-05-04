@@ -14,6 +14,8 @@ public:
 
 	void SetAnimSpeed(int speed) { animSpeed = speed; }
 	void SetNumFrame(int frameNumber) { numFrames = frameNumber; }
+
+	void SetCurFrame(int newCurFrame) { newCurFrame > numFrames ? currFrame = numFrames : currFrame = newCurFrame; }
 	int GetNumFrame() { return numFrames; }
 
 
@@ -21,6 +23,7 @@ public:
 	// Marc Dallaire - 2016/04/26
 	// Ajout d'une fonction pour virer les sprites horizontalement.
 	void FlipH() { isFlippedH = !isFlippedH; }
+	void FlipV() { isFlippedV = !isFlippedV; }
 
 private:
 	int numFrames;

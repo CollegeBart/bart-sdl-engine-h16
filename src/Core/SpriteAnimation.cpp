@@ -10,7 +10,8 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, int numFrames
 	, currFrame(0.0f)
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
-	, isFlippedH(false), isFlippedV(false)
+	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
@@ -20,7 +21,8 @@ SpriteAnimation::SpriteAnimation(const char * path, Rekt* srcRect, float x, floa
 	, currFrame(0.0f)
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
-	, isFlippedH(false), isFlippedV(false)
+	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
@@ -30,12 +32,14 @@ SpriteAnimation::SpriteAnimation(const char * sceneName, const char * path, Rekt
 	, currFrame(0.0f)
 	, prevFrameTime(0.0f)
 	, animSpeed(1000)
-	, isFlippedH(false), isFlippedV(false)
+	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
 SpriteAnimation::~SpriteAnimation()
 {
+
 }
 
 

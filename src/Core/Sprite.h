@@ -31,6 +31,7 @@ public:
 	// Marc Dallaire - 2016/04/26
 	// Ajout d'une fonction pour virer les sprites horizontalement.
 	void FlipH() { isFlippedH = !isFlippedH; }
+	void FlipV() { isFlippedV = !isFlippedV; }
 	
 
 protected:
@@ -48,8 +49,12 @@ protected:
 	virtual void Draw();
 	void SetTexture(SDL_Texture* tex);
 
+
+
 private:
 	bool isFullScreen;
 	bool isFlippedH;
+	bool isFlippedV;
+
 };
 
