@@ -31,6 +31,9 @@ void Scene::Start()
 	{
 		(*iter)->Start();
 	}
+
+	//GPhysics->SetContactListener(
+	//	new Collider::CollisionListener());
 }
 
 void Scene::Update()
@@ -46,7 +49,6 @@ void Scene::Update()
 		{
 			(*iter)->Start();
 		}
-
 		(*iter)->Update();
 	}
 
@@ -86,6 +88,7 @@ void Scene::Stop()
 	{
 		(*iter)->Stop();
 	}
+	components.clear();
 }
 
 // Marc Dallaire - 2016/04/27

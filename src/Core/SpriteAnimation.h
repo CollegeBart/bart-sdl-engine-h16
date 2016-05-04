@@ -29,6 +29,7 @@ private:
 	int animSpeed;
 
 	bool isFlippedH;
+	bool isFlippedV;
 
 	virtual void Draw();
 

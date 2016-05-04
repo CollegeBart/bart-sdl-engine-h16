@@ -12,7 +12,7 @@ public:
 
 	Component();
 	Component(const char* sceneName);
-	~Component();
+	virtual ~Component();
 
 	bool GetIsNew() { return isNew; }
 
