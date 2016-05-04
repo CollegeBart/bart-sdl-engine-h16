@@ -21,6 +21,7 @@ public:
 	// Marc Dallaire - 2016/04/26
 	// Ajout d'une fonction pour virer les sprites horizontalement.
 	void FlipH() { isFlippedH = !isFlippedH; }
+	void FlipV() { isFlippedV = !isFlippedV; }
 
 private:
 	int numFrames;

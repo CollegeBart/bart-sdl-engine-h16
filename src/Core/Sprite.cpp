@@ -7,6 +7,7 @@ Sprite::Sprite()
 	, texture(nullptr)
 	, srcRect(nullptr)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 }
 
@@ -18,6 +19,7 @@ Sprite::Sprite(const char * path, float x, float y)
 	, srcRect(nullptr)
 	, isFullScreen(false)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	srcRect = new Rekt();
 	dstRect->x = x;
@@ -49,6 +51,7 @@ Sprite::Sprite(const char * path, Rekt * src, Rekt * dst)
 	, texture(nullptr)
 	, srcRect(src)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	dstRect = dst;
 
@@ -65,6 +68,7 @@ Sprite::Sprite(const char * path, Rekt * src, float x, float y)
 	, texture(nullptr)
 	, srcRect(src)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	dstRect->x;
 	dstRect->y;
@@ -82,6 +86,7 @@ Sprite::Sprite(const char * sceneName, int buffer)
 	, texture(nullptr)
 	, srcRect(nullptr)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	srcRect = new Rekt();
 	dstRect->x = 250;
@@ -95,6 +100,7 @@ Sprite::Sprite(const char * sceneName, const char * path, float x, float y)
 	, texture(nullptr)
 	, srcRect(nullptr)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	srcRect = new Rekt();
 	dstRect->x = x;
@@ -126,6 +132,7 @@ Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, Rekt * dst
 	, texture(nullptr)
 	, srcRect(src)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	dstRect = dst;
 
@@ -142,6 +149,7 @@ Sprite::Sprite(const char * sceneName, const char * path, Rekt * src, float x, f
 	, texture(nullptr)
 	, srcRect(src)
 	, isFlippedH(false)
+	, isFlippedV(false)
 {
 	dstRect->x;
 	dstRect->y;
@@ -213,6 +221,8 @@ void Sprite::Draw()
 			// Ajout d'une fonction pour virer les sprites horizontalement.
 			if (isFlippedH)
 				flipFlag = SDL_FLIP_HORIZONTAL;
+			else if (isFlippedV)
+				flipFlag = SDL_FLIP_VERTICAL;
 			else
 				flipFlag = SDL_FLIP_NONE;
 
