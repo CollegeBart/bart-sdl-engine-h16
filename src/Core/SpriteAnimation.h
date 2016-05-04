@@ -14,6 +14,8 @@ public:
 
 	void SetAnimSpeed(int speed) { animSpeed = speed; }
 	void SetNumFrame(int frameNumber) { numFrames = frameNumber; }
+
+	void SetCurFrame(int newCurFrame) { newCurFrame > numFrames ? currFrame = numFrames : currFrame = newCurFrame; }
 	int GetNumFrame() { return numFrames; }
 
 
