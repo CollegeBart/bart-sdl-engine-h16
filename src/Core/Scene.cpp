@@ -5,8 +5,9 @@ Scene::Scene()
 	GEngine->AddScene(DEFAULT_SCENE_NAME, this);
 
 	// Initialize physics.
+	collListener = new Collider::CollisionListener();
 	GPhysics->SetContactListener(
-		new Collider::CollisionListener());
+		collListener);
 }
 
 Scene::Scene(const char* sceneName)
@@ -14,12 +15,14 @@ Scene::Scene(const char* sceneName)
 	GEngine->AddScene(sceneName, this);
 
 	// Initialize physics.
+	collListener = new Collider::CollisionListener();
 	GPhysics->SetContactListener(
-		new Collider::CollisionListener());
+		collListener);
 }
 
 Scene::~Scene()
 {
+	delete collListener;
 }
 
 void Scene::Start()

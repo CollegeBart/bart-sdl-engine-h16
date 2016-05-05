@@ -8,6 +8,11 @@ public:
 	Physics();
 	~Physics();
 
+	b2World* GetWorld()
+	{
+		return &world;
+	}
+
 	void SetContactListener(b2ContactListener* listener) {
 		world.SetContactListener(listener);
 	}

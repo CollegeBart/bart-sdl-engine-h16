@@ -124,7 +124,10 @@ int Engine::Run()
 			}
 		}
 		Update();
-		Draw();
+		if (!changingScene)
+		{
+			Draw();
+		}
 	}
 
 	Stop();
@@ -141,8 +144,12 @@ void Engine::ChangeCurrentScene(const char * sceneName)
 	else
 	{
 		scenes[currentScene]->Stop();
+
+		physics->GetWorld()->Dump();
+
 		currentScene = sceneName;
 		scenes[currentScene]->Start();
+		changingScene = true;
 	}
 }
 
