@@ -42,20 +42,7 @@ public:
 	{
 		scenes[sceneName] = scene;
 	}
-	void ChangeCurrentScene(const char* sceneName)
-	{
-		if (scenes[sceneName] == nullptr)
-		{
-			std::cout << "Error! Scene name \"" << sceneName << "\" does not exist." << std::endl;
-		}
-		else
-		{
-			Stop();
-			currentScene = sceneName;
-			Start();
-		}
-			
-	}
+	void ChangeCurrentScene(const char* sceneName);
 
 private:
 	void Start();
@@ -65,6 +52,7 @@ private:
 
 	bool isInitialized;
 	bool isRunning;
+	bool changingScene;
 
 	Timer* timer;
 	SDL_Event* event;

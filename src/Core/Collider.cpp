@@ -9,7 +9,7 @@ Collider::Collider()
 
 Collider::~Collider()
 {
-	DeleteCollider();
+	//DeleteCollider();
 }
 
 void Collider::Update(unsigned int t)
@@ -25,6 +25,7 @@ void Collider::Update(unsigned int t)
 void Collider::CreateCollider(ColliderType type, float mass)
 {
 	DeleteCollider();
+	std::cout << "COLLIDER CREATED" << std::endl;
 	body = GPhysics->CreateBody(dstRect->x + (dstRect->w * 0.5f), dstRect->y + (dstRect->h * 0.5f),
 		(mass == 0.f) ? b2_staticBody : b2_dynamicBody
 		);
@@ -87,6 +88,7 @@ void Collider::DeleteCollider()
 {
 	if (body != NULL)
 	{
+		std::cout << "DELETE COLLIDER" << std::endl;
 		GPhysics->DestroyBody(body);
 		body = NULL;
 	}

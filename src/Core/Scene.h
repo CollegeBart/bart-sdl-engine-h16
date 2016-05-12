@@ -30,4 +30,6 @@ private:
 	std::vector<Component*> components;
 	std::vector<Component*> newComponents;
 
+
+	Collider::CollisionListener* collListener;
 };

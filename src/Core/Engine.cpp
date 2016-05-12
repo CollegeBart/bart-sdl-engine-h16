@@ -5,7 +5,7 @@ Engine* Engine::instance = nullptr;
 
 Engine::Engine()
 	: isInitialized(false)
-	, isRunning(false)
+	, isRunning(false), changingScene(false)
 	, event(0)
 	, input(nullptr)
 	, resources(nullptr)
@@ -124,7 +124,10 @@ int Engine::Run()
 			}
 		}
 		Update();
-		Draw();
+		if (!changingScene)
+		{
+			Draw();
+		}
 	}
 
 	Stop();
@@ -132,7 +135,25 @@ int Engine::Run()
 	return 0;
 }
 
-void Engine::Start() 
+void Engine::ChangeCurrentScene(const char * sceneName)
+{
+	if (scenes[sceneName] == nullptr)
+	{
+		std::cout << "Error! Scene name \"" << sceneName << "\" does not exist." << std::endl;
+	}
+	else
+	{
+		scenes[currentScene]->Stop();
+
+		physics->GetWorld()->Dump();
+
+		currentScene = sceneName;
+		scenes[currentScene]->Start();
+		changingScene = true;
+	}
+}
+
+void Engine::Start()
 {
 	isRunning = true;
 
@@ -144,10 +165,14 @@ void Engine::Start()
 
 void Engine::Update() 
 {
+	changingScene = false;
 	scenes[currentScene]->Update();
 
 	timer->Tick();
-	physics->Step();
+	if (!changingScene)
+	{
+		physics->Step();
+	}
 }
 
 void Engine::Draw() 
