@@ -43,12 +43,17 @@ public:
 		scenes[sceneName] = scene;
 	}
 	void ChangeCurrentScene(const char* sceneName);
+	int GetWidth() { return width; }
+	int GetHeight() { return height; }
 
 private:
 	void Start();
 	void Update();
 	void Draw();
 	void Stop();
+
+	int width;
+	int height;
 
 	bool isInitialized;
 	bool isRunning;

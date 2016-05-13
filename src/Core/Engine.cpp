@@ -40,6 +40,9 @@ bool Engine::Init(const char* title, int width, int height)
 {
 	if (!isInitialized)
 	{
+		this->width = width;
+		this->height = height;
+		
 		if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		{
 			printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
