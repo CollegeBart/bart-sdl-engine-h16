@@ -51,3 +51,11 @@ void Font::SetText(const char* text)
 	surfaceMessage = TTF_RenderText_Solid(font, text, white);
 	SetTexture(SDL_CreateTextureFromSurface(GRenderer, surfaceMessage));
 }
+
+// Méthode qui change le texte et la couleur de la police de caractères selon le code passé en paramètre.
+void Font::SetText(const char* text, const Font::ColorFont colorCode)
+{
+	white = ColorCodes[colorCode];
+
+	SetText(text);
+}

@@ -64,7 +64,8 @@ void TestEnvironment::Update()
 	// TIMER 
 	std::stringstream ss;
 	ss << std::setw(3) << std::setfill(' ') << GTimer->GetTimeInSeconds();
-	test->SetText(ss.str().c_str());
+	//test->SetText(ss.str().c_str());
+	test->SetText(ss.str().c_str(), Font::CLR_YELLOW);
 
 	// Marc Dallaire - 2016/04/20
 	// Test pour l'ajout de components au runtime.
